@@ -1,0 +1,17 @@
+This program simply does conversion from Two's Complement.
+The two's-complement representation must be in 32-bit hex (8 hex digits).
+For example, 0xFFFFFFFF is -1.
+
+Two's-complement is the most common method of internally representing signed
+integers on computers. The two's complement of a binary number is defined as
+the value obtained by subtracting the number from a large power of two.
+
+For further reading, see Thomas Finley's tutorial on two's-complement:
+http://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html
+
+Elizabeth Johnson also has some good examples:
+http://www.cs.xu.edu/csci210/02f/day10/slide4.html
+
+Date: Sept 25-26, 2008
+Course: COSC 2P12 - Computer Organization and Assembly Language
+Part of assignment 1 (there was also a written section).
