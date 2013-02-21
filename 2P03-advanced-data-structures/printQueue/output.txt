@@ -1,0 +1,9 @@
+0 seconds	job #1 arrives			10/black
+0 seconds	job #1 starts printing		10/black
+5 seconds	job #2 arrives			5/colour
+25 seconds	job #3 arrives			2/black
+75 seconds	job #1 finished printing	10/black
+75 seconds	job #3 starts printing		2/black
+90 seconds	job #3 finished printing	2/black
+90 seconds	job #2 starts printing		5/colour
+165 seconds	job #2 finished printing	5/colour
