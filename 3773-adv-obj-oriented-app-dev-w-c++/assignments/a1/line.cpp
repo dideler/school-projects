@@ -1,27 +1,22 @@
 // A .cc file should contain more information about implementation details or
 // discussions of tricky algorithms.
 
-// - test if two lines are parallel
-// - test if two lines are perpendicular
-// - find the intersection of two lines (assume not called if already parallel)
-// - find shortest distance between a line and a point
-// - handle all kinds of lines, including of the form y=b and x=c
 
 #include "line.h"
 
 Line::Line(const Point &p1, const Point &p2)
 {
-  if (isEqual(p1.x, p2.x))
+  if (isEqual(p1.x_, p2.x_))
   {
     a_ = 1.0;
     b_ = 0.0;
-    c_ = -p1.x;
+    c_ = -p1.x_;
   }
   else
   {
-    a_ = -static_cast<double>(p1.y - p2.y) / (p1.x - p2.x);
+    a_ = -static_cast<double>(p1.y_ - p2.y_) / (p1.x_ - p2.x_);
     b_ = 1.0;
-    c_ = -static_cast<double>(a_ * p1.x) - p1.y;
+    c_ = -static_cast<double>(a_ * p1.x_) - p1.y_;
   }
 }
 
@@ -45,13 +40,8 @@ Line::Line(const Point &p, double m)
 {
   a_ = -m;
   b_ = 1.0;
-  c_ = -((a_ * p.x) + (b_ * p.y));
+  c_ = -((a_ * p.x_) + (b_ * p.y_));
 }
-
-// TODO: try with default constructor - difference?
-Line::Line(const Line &other) : a_(other.a_), b_(other.b_), c_(other.c_) {}
-
-Line::~Line() {} // TODO: not needed
 
 // Two lines are parallel if the slopes are the same.
 // Checks coefficients a & b.
@@ -81,24 +71,19 @@ Point Line::getIntersection(const Line &other) const
   if (!intersects(other)) throw NoIntersectException();
   Point p;
   // Solve system of 2 linear algebraic equations with 2 unknowns.
-  p.x = (other.b_ * c_ - b_ * other.c_) / (other.a_ * b_ - a_ * other.b_);
+  p.x_ = (other.b_ * c_ - b_ * other.c_) / (other.a_ * b_ - a_ * other.b_);
   if (fabs(b_) > EPS)
-    p.y = -(a_ * p.x + c_);
+    p.y_ = -(a_ * p.x_ + c_);
   else
-    p.y = -(other.a_ * p.x + other.c_);
+    p.y_ = -(other.a_ * p.x_ + other.c_);
   return p;
 }
 
 double Line::getShortestDistToPoint(const Point &p) const
 {
-  return distance(findClosestPoint(p), p);
+  return p.distance(findClosestPoint(p));
 }
 
-double Line::distance(const Point &p1, const Point &p2) const
-{
-  return hypot(p1.x - p2.x, p1.y - p2.y);
-  // hypot(dx, dy) returns sqrt(dx * dx + dy * dy)
-}
 
 // A horizontal line has coefficients a == 0 anb b != 0.
 bool Line::isHorizontal() const
@@ -120,9 +105,9 @@ bool Line::onSameLine(const Line &other) const
 Point Line::findClosestPoint(const Point &p) const
 {
   if (isVertical()) // Try just checking b coefficient if any issues.
-    return Point(-c_, p.y);
+    return Point(-c_, p.y_);
   if (isHorizontal()) // Check just a coefficient if issues FIXME
-    return Point(p.x, -c_);
+    return Point(p.x_, -c_);
 
   // Otherwise the 2 lines must intersect at some point.
   // Create a line perpendicular to current line and passing through point p.
@@ -145,4 +130,10 @@ bool Line::intersects(const Line &other) const
 bool Line::isEqual(const double a, const double b) const
 {
   return fabs(a - b) < EPS;
+}
+
+ostream &operator<<(ostream &out, const Line &l)
+{
+  return out << l.a_ << "x + " << l.b_ << (l.c_ < 0 ? "y " : "y + ") << l.c_ << " = 0";
+//    "y + " << l.c_ << " = 0";
 }

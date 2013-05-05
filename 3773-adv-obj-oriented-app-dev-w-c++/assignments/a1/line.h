@@ -1,17 +1,9 @@
 /**
- *  Exercise 3.3
- *  From the book "C++ Programming with Design Patterns Revealed"
+ * Exercise 3.3
+ * From the book "C++ Programming with Design Patterns Revealed"
  *  
- *  @author Dennis Ideler <ideler.dennis@gmail.com>
+ * @author Dennis Ideler <ideler.dennis@gmail.com>
  */
-
-// Note that I provided a copy constructor and assignment operator
-// because the text book recommends it. The style guide that I follow,
-// however, recommends not using them in most cases and disabling them.
-// See:
-//  http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml?showone=Operator_Overloading#Operator_Overloading
-//  http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml?showone=Copy_Constructors#Copy_Constructors
-
 
 #ifndef LINE_H_
 #define LINE_H_
@@ -24,22 +16,12 @@ using std::logic_error;
 
 const double EPS = 1e-9; // Substitute for 0 in equality checks.
 
-// TODO document functions for the user
-// A .h file describes the classes that are declared in the file
-// with an overview of what they are for and how they are used.
-
 // Custom exception to be used when calculating the non-existant intersection
 // point of two lines.
-// TODO: move definition to cpp file
 class NoIntersectException : public logic_error
 {
  public:
   NoIntersectException() : logic_error("Lines do not intersect") {}
-
-//  virtual const char* what() const throw()
-//  {
-//    return "The two lines do not intersect.";
-//  }
 };
 
 // This class contains the representation and common operations for straight
@@ -50,14 +32,22 @@ class NoIntersectException : public logic_error
 class Line
 {
  public:
+  // Create a line from two points.
   Line(const Point &p1, const Point &p2);
+
+  // Create a line from two x-y coordinates.
   Line(double x1, double y1, double x2, double y2);
+
   // Create a line given a point and a gradient/slope of line.
   // Note that this creates a line and not a line segment.
   Line(const Point &p, double m);
-  Line(const Line &other);
-  //Lines& operator=(const Lines &other); TODO
-  ~Line();
+
+  // I do not provide an explicit copy and assignment constructor or destructor.
+  // The implicit constructors and destructor provided by the compiler are
+  // sufficient in this case.
+  //Line(const Line &other);
+  //Lines& operator=(const Lines &other); 
+  //~Line();
 
   // Returns true if this line and the other are parallel.
   // This method considers a line parallel if the slopes are the same, which
@@ -70,6 +60,10 @@ class Line
   // Returns true if this line and the other meet at a right angle (90 degrees).
   // In other words, if the lines are orthogonal to each other.
   bool isPerpendicular(const Line &other) const;
+  
+  // Returns true if this line intersects with the other.
+  // Otherwise the lines are either the same or parallel.
+  bool intersects(const Line &other) const;
 
   // Returns the intersection point of this line and the other.
   // Throws an exception if the lines do not intersect.
@@ -82,9 +76,6 @@ class Line
  private:
   // The coefficients of the line equation ax + by = c.
   double a_, b_, c_;
-
-  // Returns the Euclidean distance between two points.
-  double distance(const Point &p1, const Point &p2) const;
 
   // Returns true if this line is horizontal.
   bool isHorizontal(void) const;
@@ -99,13 +90,12 @@ class Line
   // Returns the closest point on this line to point p.
   Point findClosestPoint(const Point &p) const;
 
-  // Returns true if this line intersects with the other.
-  // Otherwise the lines are either the same or parallel.
-  bool intersects(const Line &other) const;
-
   // True if two doubles are virtually equal.
   // Helper function; less error-prone than a == b.
   bool isEqual(const double a, const double b) const;
+
+  // Overload the << operator to print a line.
+  friend ostream &operator<<(ostream &out, const Line &l);
 };
 
 #endif

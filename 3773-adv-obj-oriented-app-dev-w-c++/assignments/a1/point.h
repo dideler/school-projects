@@ -5,13 +5,24 @@
 using std::ostream;
 
 // A 2D point in the Cartesian coordinate system.
-struct Point
+class Point
 {
-  double x, y;
-  Point(double _x = 0, double _y = 0);
+ public:
+  // Creates a point with the given x and y coordinates, or a point at the
+  // origin (0,0) if no coordinates are given.
+  Point(double x = 0, double y = 0);
+
+  // Returns the Euclidean distance between this point and another point.
+  double distance(const Point &other) const;
+ private:
+  double x_, y_;
+
+  // Let the Line class access (private) data members directly.
+  friend class Line;
+
+  // Overload the << operator to print a point.
+  friend ostream &operator<<(ostream &out, const Point &p);
 };
 
-// Overload the << operator to print a point.
-ostream &operator<<(ostream &out, const Point &p);
 
 #endif
