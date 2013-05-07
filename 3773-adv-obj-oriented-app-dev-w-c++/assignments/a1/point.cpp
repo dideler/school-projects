@@ -1,12 +1,19 @@
+/**
+ * Exercise 3.3
+ * From the book "C++ Programming with Design Patterns Revealed"
+ *  
+ * @author Dennis Ideler <ideler.dennis@gmail.com>
+ */
+
 #include <cmath>
 #include "point.h"
 
 Point::Point(double x, double y) : x_(x), y_(y) {}
 
+// hypot(dx, dy) returns sqrt(dx * dx + dy * dy)
 double Point::distance(const Point &other) const
 {
   return hypot(x_ - other.x_, y_ - other.y_);
-  // hypot(dx, dy) returns sqrt(dx * dx + dy * dy)
 }
 
 ostream &operator<<(ostream &out, const Point &p)

@@ -1,6 +1,9 @@
-// A .cc file should contain more information about implementation details or
-// discussions of tricky algorithms.
-
+/**
+ * Exercise 3.3
+ * From the book "C++ Programming with Design Patterns Revealed"
+ *  
+ * @author Dennis Ideler <ideler.dennis@gmail.com>
+ */
 
 #include "line.h"
 

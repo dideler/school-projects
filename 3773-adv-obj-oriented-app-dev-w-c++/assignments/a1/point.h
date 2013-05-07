@@ -1,3 +1,10 @@
+/**
+ * Exercise 3.3
+ * From the book "C++ Programming with Design Patterns Revealed"
+ *  
+ * @author Dennis Ideler <ideler.dennis@gmail.com>
+ */
+
 #ifndef POINT_H_
 #define POINT_H_
 
@@ -14,6 +21,7 @@ class Point
 
   // Returns the Euclidean distance between this point and another point.
   double distance(const Point &other) const;
+
  private:
   double x_, y_;
 
