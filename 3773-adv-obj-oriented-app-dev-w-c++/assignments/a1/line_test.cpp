@@ -59,6 +59,7 @@ int main()
   }
   cout << endl;
 
+  // Distance test.
   double d = points[0].distance(points[5]);
   cout << "Euclidean distance between " << points[0] << " and " << points[5] << " = " << d << "\n" << endl;
   assert(d == 5.0);
@@ -84,6 +85,7 @@ int main()
   }
   cout << endl;
 
+  // Parallel tests.
   bool b = lines[0].isParallel(lines[1]);
   cout << "line 0 (" << lines[0] << ") and line 1 (" << lines[1] << ") are parallel? " << boolalpha << b << endl;
   assert(b == false); // This is more readable than assert(!b).
@@ -95,6 +97,7 @@ int main()
   assert(b == true);
   cout << endl;
 
+  // Perpendicular tests.
   b = lines[2].isPerpendicular(lines[4]);
   cout << "line 2 (" << lines[2] << ") and line 4 (" << lines[4] << ") are perpendicular? " << boolalpha << b << endl;
   assert(b == false);
@@ -109,6 +112,7 @@ int main()
   assert(b == true);
   cout << endl;
   
+  // Intersection tests.
   Point p;
   b = lines[0].intersects(lines[1]);
   assert(b == true);
@@ -123,6 +127,7 @@ int main()
   cout << "line 1 (" << lines[1] << ") and line 8 (" << lines[8] << ") intersect? " << boolalpha << b << ", at " << p << endl;
   cout << endl;
 
+  // Shortest distance to point test.
   d = lines[2].getShortestDistToPoint(points[0]);
   cout.precision(3);
   cout << "Euclidean distance from closest point on line 2 (" << lines[2] << ") to point 0 " << points[0] << " = " << d << endl;

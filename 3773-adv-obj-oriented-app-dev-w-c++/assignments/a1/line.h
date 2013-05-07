@@ -14,7 +14,7 @@ using std::logic_error;
 
 #include "point.h"
 
-const double EPS = 1e-9; // Substitute for 0 in equality checks.
+const double EPS = 1e-9; // Very small number for use in equality checks.
 
 // Custom exception to be used when calculating the non-existant intersection
 // point of two lines.
@@ -29,6 +29,9 @@ class NoIntersectException : public logic_error
 // A line is represented as coefficients of ax + by + c = 0.
 // The line equation y = mx + c is avoided because it's difficult for handling
 // all cases due to vertical lines having "infinite" slope.
+//
+// An explicit copy constructor, assignment operator, and destructor are not
+// provided by me. The implicit ones provided by the compiler are sufficient.
 class Line
 {
  public:
@@ -41,13 +44,6 @@ class Line
   // Create a line given a point and a gradient/slope of line.
   // Note that this creates a line and not a line segment.
   Line(const Point &p, double m);
-
-  // I do not provide an explicit copy and assignment constructor or destructor.
-  // The implicit constructors and destructor provided by the compiler are
-  // sufficient in this case.
-  //Line(const Line &other);
-  //Lines& operator=(const Lines &other); 
-  //~Line();
 
   // Returns true if this line and the other are parallel.
   // This method considers a line parallel if the slopes are the same, which
@@ -88,7 +84,8 @@ class Line
   bool onSameLine(const Line &other) const;
 
   // Returns the closest point on this line to point p.
-  Point findClosestPoint(const Point &p) const;
+  Point findClosestPoint(const Point &p) const
+    throw(NoIntersectException);
 
   // True if two doubles are virtually equal.
   // Helper function; less error-prone than a == b.

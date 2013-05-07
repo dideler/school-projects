@@ -106,6 +106,7 @@ bool Line::onSameLine(const Line &other) const
 }
 
 Point Line::findClosestPoint(const Point &p) const
+  throw(NoIntersectException)
 {
   if (isVertical()) // Try just checking b coefficient if any issues.
     return Point(-c_, p.y_);
@@ -118,12 +119,12 @@ Point Line::findClosestPoint(const Point &p) const
   Line perpendicular(p, 1 / a_);
   if (intersects(perpendicular))
     return getIntersection(perpendicular);
-  return Point(); // FIXME improve, throw exception instead
+  throw NoIntersectException(); // Should never happen.
 }
 
 bool Line::intersects(const Line &other) const
 {
-  if (onSameLine(other)) return false; // All points intersect!
+  if (onSameLine(other)) return false; // All points intersect.
   if (isParallel(other)) return false;
   return true;
 }
@@ -138,5 +139,4 @@ bool Line::isEqual(const double a, const double b) const
 ostream &operator<<(ostream &out, const Line &l)
 {
   return out << l.a_ << "x + " << l.b_ << (l.c_ < 0 ? "y " : "y + ") << l.c_ << " = 0";
-//    "y + " << l.c_ << " = 0";
 }
