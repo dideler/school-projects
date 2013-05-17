@@ -12,7 +12,7 @@
 #include <stdexcept>
 using std::logic_error;
 
-#include "point.h"
+#include "3.3-point.h"
 
 const double EPS = 1e-9; // Very small number for use in equality checks.
 

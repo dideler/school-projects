@@ -28,5 +28,11 @@ but made them private so they're not part of the (public) interface.
 >
 > Carefully design the interfaces for these classes and write a program to test them.
 
+I made two versions for exercise 3.9, ex3.9 and ex3.9v2.
+The second version was made so I could become more familiar with advanced C++
+features such as inheritance, polymorphism, abstract classes, scoped enums,
+friends, and operator overloading. It's not meant to be graded.
+I included it because feedback is always appreciated :).
+
 #### Exercise 3.10
 > Repeat exercise 3.9 but use pointers to represent a flower and a book.

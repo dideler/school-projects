@@ -5,7 +5,7 @@
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  */
 
-#include "line.h"
+#include "3.3-line.h"
 
 Line::Line(const Point &p1, const Point &p2)
 {

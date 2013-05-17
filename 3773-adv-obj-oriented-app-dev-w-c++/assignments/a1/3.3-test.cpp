@@ -15,8 +15,8 @@
 #include <vector>
 using namespace std;
 
-#include "point.h"
-#include "line.h"
+#include "3.3-point.h"
+#include "3.3-line.h"
 
 int main()
 {

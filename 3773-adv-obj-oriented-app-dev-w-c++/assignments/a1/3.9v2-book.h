@@ -8,13 +8,15 @@
 #ifndef BOOK_H_
 #define BOOK_H_
 
-#include "item.h"
+#include "3.9v2-item.h"
 
 class Book : public Item
 {
  public:
-  Book(string name, double price);
-  virtual void print(ostream &out) const;
+  Book();
+  Book(std::string name, double price);
+ private:
+  void print(std::ostream &out) const;
 };
 
 #endif

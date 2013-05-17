@@ -6,12 +6,14 @@
  */
 
 #include <iomanip>
-#include "book.h"
+#include "3.9v2-book.h"
 
-Book::Book(string name, double price) : Item(name, price) {}
+Book::Book() {}
+
+Book::Book(std::string name, double price) : Item(name, price) {}
 
 // Printing the price uses fixed-point notation and 2 decimal places precision.
-void Book::print(ostream &out) const
+void Book::print(std::ostream &out) const
 {
   out << "Book Name: " << name_ << "\nPrice: $" << std::fixed << std::setprecision(2) << price_;
 }

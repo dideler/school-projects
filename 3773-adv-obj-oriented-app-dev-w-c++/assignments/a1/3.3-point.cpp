@@ -6,7 +6,7 @@
  */
 
 #include <cmath>
-#include "point.h"
+#include "3.3-point.h"
 
 Point::Point(double x, double y) : x_(x), y_(y) {}
 
