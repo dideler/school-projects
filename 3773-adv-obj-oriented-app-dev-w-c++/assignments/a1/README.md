@@ -1,7 +1,7 @@
 Assignment 1
 ------------
 
-Based on the the book *C++ Programming with Design Patterns Revealed*
+Based on the book *C++ Programming with Design Patterns Revealed*
 
 #### Exercise 3.3
 > Write a class `Lines` that provides the following four operations on lines:

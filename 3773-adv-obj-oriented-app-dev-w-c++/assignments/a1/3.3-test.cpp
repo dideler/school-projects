@@ -1,13 +1,16 @@
 /**
- * Exercise 3.3
+ * COMP 3773 - Assignment 1 - Exercise 3.3
  * From the book "C++ Programming with Design Patterns Revealed"
- *  
+ *
  * Test if two lines are parallel.
  * Test if two lines are perpendicular.
  * Find the intersection of two lines (assume not called if already parallel).
  * Find shortest distance between a line and a point.
  *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
+ * @student# 100122809
+ * @date May 2013
+ * @version 1.0
  */
 
 #include <cassert>
