@@ -14,8 +14,8 @@
 class Gift
 {
  public:
-  Gift(Book book);
-  Gift(Flower flower);
+  explicit Gift(Book book);
+  explicit Gift(Flower flower);
   void print() const;
  private:
   Book book_;

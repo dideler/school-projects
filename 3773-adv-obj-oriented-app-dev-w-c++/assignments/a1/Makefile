@@ -16,7 +16,7 @@ CFLAGS = $(STD) $(WARNINGS) -c $(DEBUG) # Compiling flags
 LFLAGS = $(STD) $(WARNINGS) $(DEBUG) # Linking flags
 
 # If make is called without a target, it runs the first target, so this one.
-all: ex3.3 ex3.9 ex3.9v2 clean
+all: ex3.3 ex3.9 ex3.9v2 ex3.10 clean
 
 OBJ1 = 3.3-point.o 3.3-line.o 3.3-test.o
 ex3.3: $(OBJ1)
@@ -61,8 +61,21 @@ ex3.9v2: $(OBJ3)
 3.9v2-test.o: 3.9v2-test.cpp 3.9v2-gift.h
 	$(CC) $(CFLAGS) 3.9v2-test.cpp
 
+OBJ4 = 3.10-book.o 3.10-flower.o 3.10-gift.o 3.10-test.o
+ex3.10: $(OBJ4)
+	$(CC) $(LFLAGS) $(OBJ4) -o ex3.10
+3.10-book.o: 3.10-book.cpp 3.10-book.h
+	$(CC) $(CFLAGS) 3.10-book.cpp
+3.10-flower.o: 3.10-flower.cpp 3.10-flower.h
+	$(CC) $(CFLAGS) 3.10-flower.cpp
+3.10-gift.o: 3.10-gift.cpp 3.10-gift.h
+	$(CC) $(CFLAGS) 3.10-gift.cpp
+3.10-gift.h: 3.10-book.h 3.10-flower.h
+3.10-test.o: 3.10-test.cpp 3.10-gift.h
+	$(CC) $(CFLAGS) 3.10-test.cpp
+
 clean:
 	-rm -f *.o
 
 clean-all:
-	-rm -f *.o ex3.3 ex3.9 ex3.9v2
+	-rm -f *.o ex3.3 ex3.9 ex3.9v2 ex3.10
