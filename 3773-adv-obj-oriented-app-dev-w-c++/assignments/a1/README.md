@@ -3,7 +3,8 @@ Assignment 1
 
 Based on the book *C++ Programming with Design Patterns Revealed*
 
-Built and tested with gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5).  
+Built and tested with gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5).
+You need minimum GCC 4.5, otherwise try Clang.  
 Run `make` to build the executables.
 
 #### Exercise 3.3
