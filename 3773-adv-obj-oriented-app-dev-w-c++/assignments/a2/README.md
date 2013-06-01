@@ -15,6 +15,9 @@ Run `make` to build the executables.
 
 ![](3.7-UML.png)
 
+I used a composition link between the classes because there is a "owns a"
+relationship. The `Cube` class is the exclusive container of the `Point` class.
+
 Note that the code for exercise 3.7 was provided to me.
 Also note that my class diagrams look slightly different than the ones in the textbook.
 This is because of the program I used, Dia.
@@ -35,6 +38,11 @@ and some content is barely cut off by the enclosing rectangles.
 > - `Company2`, which represents a company that can hire up to _n_ employees,
 >   where the value of _n_ is determined in the constructor. The employees are
 >   stored in an array.
+
+![](3.8-UML.png)
+
+I used aggregation links between the classes because there is a "has a"
+relationship. The `Employee` class is not exclusively contained by another class.
 
 Note that the code for exercise 3.8 was provided to me.
 
