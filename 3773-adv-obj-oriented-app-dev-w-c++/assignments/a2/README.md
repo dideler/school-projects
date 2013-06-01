@@ -13,13 +13,21 @@ Run `make` to build the executables.
 > Repeat exercise 3.6, but this time use pointers to `Point`s rather than nested
 > objects in the class `Cube`.
 
+![](3.7-UML.png)
+
 Note that the code for exercise 3.7 was provided to me.
+Also note that my class diagrams look slightly different than the ones in the textbook.
+This is because of the program I used, Dia.
+For example, queries are followed with const, parameters have a space before their type,
+and some content is barely cut off by the enclosing rectangles.
 
 #### UML class diagram for exercise 3.8
 > Write a class `Employee` that represents an employee with three attributes:
+>
 > 1. name
 > 2. salary
 > 3. ID
+>
 > ID numbers for new employees are assigned values 1000, 1001, ... and so on.
 > Also write the following classes.
 > - `Company1`, which represents a company that can hire up to 10 employees.
