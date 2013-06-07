@@ -54,3 +54,7 @@ Note that the code for exercise 3.8 was provided to me.
 > Use a singleton design pattern and implement the code for exercise 3.8 to
 > allow at most one instance of `Company1` and at most two instances of
 > `Company2`.
+
+I used two variations of the singleton pattern. For Company1 I used references
+to objects, and for Company2 I used pointers to objects. I confirmed with
+valgrind that there are no memory leaks.
