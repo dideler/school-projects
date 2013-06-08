@@ -5,8 +5,8 @@ Based on the book *C++ Programming with Design Patterns Revealed*
 
 Diagrams made with Dia 0.97.2.
 
-Code tested with gcc version 4.7.3.
-You need minimum GCC 4.5, otherwise try Clang.  
+Code tested with clang++ version 3.2.
+g++ (minimum GCC 4.5) should also work.  
 Run `make` to build the executables.
 
 #### UML class diagram for exercise 3.7
