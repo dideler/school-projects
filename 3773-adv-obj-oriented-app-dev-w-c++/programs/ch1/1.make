@@ -6,6 +6,8 @@ LIB	= -lm
 CC = g++
 CFLAGS = -Wall -pedantic
 
+all: ch1-ex1 ch1-ex2 clean
+
 OBJ1 = example.o intstack.o
 ch1-ex1:	$(OBJ1)	
 	$(CC) $(CFLAGS) $(OBJ1) $(LIB) -o ch1-ex1 
