@@ -1,0 +1,172 @@
+Tomasz Muldner, September 2001
+Files with programs and some exercises (two per chapter) for the book:
+"C++ Programming with Design Patterns Revealed", published by Addison-Wesley, 2002 
+
+Conventions:
+============
+Except for Chapter 1, files containing examples start with ex{chapter}.{example}
+E.g.  ex2.2.cpp
+
+Files containing the code that appears in the book (outside of examples) start with ch{chapter}
+E.g.  ch2-index.cpp
+
+Files containing exercises start with e{chapter}{number}
+E.g.  e2.3.cpp for exercise 3 from Chapter 2
+
+
+This directory contains the following directories and files:
+===========================================
+
+ch1
+===========================================================
+1.make  example.cpp  example2.cpp  intstack.cpp  intstack.h
+
+ch2
+===========================================================
+2.make ex2.1.cpp  ex2.2.cpp  ex2.3.cpp  ex2.4.cpp  ex2.5  ex2.5.cpp 
+ch2-change.cpp  ch2-index.cpp  ch2-maxMin.cpp
+
+e2: Exercises 2-2 and 2-9
+===========================================================
+2.make  2.3.cpp  e2.9.cpp
+
+ch3
+===========================================================
+ex3.1.student-d.cpp  ex3.2.student.cpp    ex3.3.fileops.h      ex3.5.intstack-d.cpp
+ex3.1.student.cpp    ex3.2.student.h      ex3.4.integer-d.cpp  ex3.5.intstack.cpp
+ex3.1.student.h      ex3.3.fileops-d.cpp  ex3.4.integer.cpp    ex3.5.intstack.h
+ex3.2.student-d.cpp  ex3.3.fileops.cpp    ex3.4.integer.h
+ch3-account-d.cpp  ch3-account.cpp    ch3-account.h
+
+e3:  Exercises 3-7 and 3-8
+===========================================================
+3.make         e3.7-cube.h     e3.7.cpp           e3.8-company1.h    e3.8-employee.cpp
+e3.7-point.cpp  e3.8-company2.cpp  e3.8-employee.h
+e3.7-cube.cpp  e3.7-point.h    e3.8-company1.cpp  e3.8-company2.h    e3.8.cpp 
+
+ch4
+===========================================================
+4.make             ex4.1.point.cpp  ex4.1a.point-d.cpp  ex4.1a.point.h     ex4.2.point.cpp
+ex4.1.point-d.cpp  ex4.1.point.h    ex4.1a.point.cpp    ex4.2.point-d.cpp  ex4.2.point.h 
+
+e4:  Exercises 4-3 and 4-9
+===========================================================
+4.make            e4.3-integer.h  e4.9-student-stack.cpp  e4.9-student.cpp  e4.9.cpp
+e4.3-integer.cpp  e4.3.cpp        e4.9-student-stack.h    e4.9-student.h 
+
+ch5:
+===========================================================
+5.make                         ex5.1.bankaccount.h         ex5.4.benchmarkclass.cpp
+ch5.student.cpp                ex5.1.student.cpp           ex5.4.benchmarkclass.h
+ch5.student.h                  ex5.1.student.h             ex5.4.driver.cpp
+ch5.studentwithaccount-d.cpp   ex5.2.Myoverflow.cpp        ex5.4.mybenchmarkclass.h
+ch5.studentwithaccount.cpp     ex5.2.Myunderflow.cpp       ex5.5.downtownstore.cpp
+ch5.studentwithaccount.h       ex5.2.driver.cpp            ex5.5.downtownstore.h
+ex5.1.accountforstudent-d.cpp  ex5.2.myoverflow.h          ex5.5.driver.cpp
+ex5.1.accountforstudent.cpp    ex5.2.myunderflow.h         ex5.5.neighborhoodstore.cpp
+ex5.1.accountforstudent.h      ex5.3.intstack-d.cpp        ex5.5.neighborhoodstore.h
+ex5.1.bank.cpp                 ex5.3.intstack.cpp          ex5.5.store.cpp
+ex5.1.bank.h                   ex5.3.intstack.h            ex5.5.store.h
+ex5.1.bankaccount.cpp          ex5.4.Mybenchmarkclass.cpp  
+
+e5:  Exercises 5-2 and 5-6
+===========================================================
+5.make          e5.2-rbook.h    e5.6-address-extended.cpp  e5.6-address.cpp
+e5.2-book.cpp   e5.2-tbook.cpp  e5.6-address-extended.h    e5.6-address.h
+e5.2-book.h     e5.2-tbook.h    e5.6-address-post.cpp      e5.6.cpp
+e5.2-rbook.cpp  e5.2.cpp        e5.6-address-post.h  
+
+ch6:
+===========================================================
+6.make                          ex6.3a.functionfactory.cpp
+ch6.dequeue.h                   ex6.4.adivision.cpp
+ch6.point.h                     ex6.4.binarynode.cpp
+ch6.pointcounted.cpp            ex6.4.binarynode.h
+ch6.pointcounted.h              ex6.4.driver.cpp
+ch6.queue.h                     ex6.4.expression.cpp
+ch6.stack.h                     ex6.4.expression.h
+ex6.1.abstractapplication.cpp   ex6.4.node.cpp
+ex6.1.abstractapplication.h     ex6.4.node.h
+ex6.1.abstractfile.cpp          ex6.4.operatorfactory.cpp
+ex6.1.abstractfile.h            ex6.4.ternarynode.cpp
+ex6.1.cachedapplication.cpp     ex6.4.ternarynode.h
+ex6.1.cachedapplication.h       ex6.4.unarynode.cpp
+ex6.1.cachedfileops.cpp         ex6.4.unarynode.h
+ex6.1.fileops.cpp               ex6.4a.addition.cpp
+ex6.1.fileops.h                 ex6.4a.addition.h
+ex6.1.regularapplication.cpp    ex6.4a.binarynode.cpp
+ex6.1.regularapplication.h      ex6.4a.binarynode.h
+ex6.2.driver.cpp                ex6.4a.division.cpp
+ex6.2.function.cpp              ex6.4a.division.h
+ex6.2.function.h                ex6.4a.driver.cpp
+ex6.2.functionfactory.cpp       ex6.4a.exponent.cpp
+ex6.2.functionfactory.h         ex6.4a.exponent.h
+ex6.2.polynomial.cpp            ex6.4a.expression.cpp
+ex6.2.polynomial.h              ex6.4a.expression.h
+ex6.2.polynomialfactory.cpp     ex6.4a.extandedoperatorfactory.cpp
+ex6.2.polynomialfactory.h       ex6.4a.extandedoperatorfactory.h
+ex6.2.rational.cpp              ex6.4a.multiplication.cpp
+ex6.2.rational.h                ex6.4a.multiplication.h
+ex6.2.rationalfactory.cpp       ex6.4a.node.cpp
+ex6.2.rationalfactory.h         ex6.4a.node.h
+ex6.2A.function.h               ex6.4a.operator.cpp
+ex6.2A.polynomial.h             ex6.4a.operator.h
+ex6.2A.rational.h               ex6.4a.operatorfactory.cpp
+ex6.3.attr.h                    ex6.4a.operatorfactory.h
+ex6.3.attributedifc.h           ex6.4a.subtraction.cpp
+ex6.3.attributedobject.cpp      ex6.4a.subtraction.h
+ex6.3.attributedobject.h        ex6.4a.unarynode.cpp
+ex6.3.attributedstudent.h       ex6.4a.unarynode.h
+ex6.3.registarwithattributes.h  ex6.4a.valuenode.cpp
+ex6.3.student.h                 ex6.4a.valuenode.h  
+
+e6:  Exercises 6-2 and 6-9
+===========================================================
+6.make    e6.2.der-intstack.cpp  e6.2.intstack.cpp  e6.9-mystring-ifc.h  e6.9-mystring.h
+e6.2.cpp  e6.2.der-intstack.h    e6.2.intstack.h    e6.9-mystring.cpp    e6.9.cpp 
+
+ch7:
+=========================================================== 
+7.make                               ch7.smartpointer.client.cpp   ex7.3-driver.cpp
+ch7-integernamespace-driver.cpp      ch7.smartpointer.client.h     ex7.3.stack.cpp
+ch7-integernamespace-ext-driver.cpp  ch7.smartpointer.client1.cpp  ex7.3.stack.h
+ch7.1                                ch7.smartpointer.cpp          ex7.4-driver-checked.cpp
+ch7.integer-driver.cpp               ch7.smartpointer.h            ex7.4-driver.cpp
+ch7.integer.cpp                      ex7.1.list-driver.cpp         ex7.4.array.cpp
+ch7.integer.h                        ex7.1.list.cpp                ex7.4.array.h
+ch7.integernamespace.cpp             ex7.1.list.h                  ex7.4.array1.cpp
+ch7.integernamespace.ext.cpp         ex7.2.abstractlist.cpp        ex7.4.array1.h
+ch7.integernamespace.ext.h           ex7.2.abstractlist.h          ex7.4.checkedarray.cpp
+ch7.integernamespace.h               ex7.2.iterator.h              ex7.4.checkedarray.h
+ch7.iterator-driver.cpp              ex7.2.list-driver.cpp         ex7.5-driver.cpp
+ch7.point.cpp                        ex7.2.list.cpp                ex7.5.insertiosort.cpp
+ch7.point.h                          ex7.2.list.h     
+
+e7: Exercises 7-4 and 7-13
+=========================================================== 
+7.make          e7.13.cpp      e7.5-list.h  ex7.4-driver-checked.cpp  ex7.4.array.cpp
+e7.13-sort.cpp  e7.5-list.cpp  e7.5.cpp     ex7.4-driver.cpp          ex7.4.array.h
+
+ch8:
+=========================================================== 
+8.make                      ex8.1.cpp            ex8.3.cpp           ex8.6.attr.cpp
+ex6.3.attr.h                ex8.1.shellsort.cpp  ex8.4.cpp
+ex6.3.attributedobject.cpp  ex8.2.cpp            ex8.5.cpp
+ex6.3.attributedobject.h    ex8.2.isprime.cpp    ex8.5.property.cpp 
+
+e8:  Exercises 1 and 14
+=========================================================== 
+8.make                     e8.1-collection-list.cpp    e8.1-company1.h    e8.1.cpp
+e8.1-collection-deque.cpp  e8.1-collection-list.h      e8.1-company2.cpp  e8.14.cpp
+e8.1-collection-deque.h    e8.1-collection-vector.cpp  e8.1-company2.h
+e8.1-collection-ifc.cpp    e8.1-collection-vector.h    e8.1-employee.cpp
+e8.1-collection-ifc.h      e8.1-company1.cpp           e8.1-employee.h   
+
+ch9:
+=========================================================== 
+9.make                   ch9-driver.cpp       ch9-showingvisitor.cpp  ex9.1.cpp
+ch9-countingvisitor.cpp  ch9-file.cpp         ch9-showingvisitor.h    ex9.2.cpp
+ch9-countingvisitor.h    ch9-file.h           ch9-specialfile.cpp     ex9.2.math.cpp
+ch9-directoryfile.cpp    ch9-regularfile.cpp  ch9-specialfile.h       ex9.2.math.h
+ch9-directoryfile.h      ch9-regularfile.h    ch9-visitor.h           ex9.2.mathifc.h       
+
