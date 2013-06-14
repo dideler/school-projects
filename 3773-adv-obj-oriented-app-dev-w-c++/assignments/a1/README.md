@@ -9,7 +9,7 @@ Run `make` to build the executables.
 
 #### Exercise 3.3
 > Write a class `Lines` that provides the following four operations on lines:
-> -test if two lines are parallel
+> - test if two lines are parallel
 > - test if two lines are perpendicular
 > - find the intersection of two lines (assume not called if already parallel)
 > - find shortest distance between a line and a point
