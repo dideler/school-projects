@@ -9,6 +9,8 @@ Code tested with clang++ version 3.2.
 g++ (minimum GCC 4.5) should also work.  
 Run `make` to build the executables.
 
+---
+
 #### UML class diagram for exercise 3.7
 > Repeat exercise 3.6, but this time use pointers to `Point`s rather than nested
 > objects in the class `Cube`.
@@ -23,6 +25,8 @@ Also note that my class diagrams look slightly different than the ones in the te
 This is because of the program I used, Dia.
 For example, queries are followed with const, parameters have a space before their type,
 and some content is barely cut off by the enclosing rectangles.
+
+---
 
 #### UML class diagram for exercise 3.8
 > Write a class `Employee` that represents an employee with three attributes:
@@ -46,9 +50,13 @@ relationship. The `Employee` class is not exclusively contained by another class
 
 Note that the code for exercise 3.8 was provided to me.
 
+---
+
 #### Exercise 4.4 (w/ namespaces)
 > Implement the code for exercise 3.9 (see assignment 1) so it provides
 > instantiating operations to create objects. Hint: use Idiom 4.2
+
+---
 
 #### Exercise 4.6
 > Use a singleton design pattern and implement the code for exercise 3.8 to
