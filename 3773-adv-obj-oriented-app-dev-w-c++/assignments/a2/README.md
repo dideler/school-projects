@@ -26,6 +26,8 @@ This is because of the program I used, Dia.
 For example, queries are followed with const, parameters have a space before their type,
 and some content is barely cut off by the enclosing rectangles.
 
+**Keywords:** UML class diagrams, composition
+
 ---
 
 #### UML class diagram for exercise 3.8
@@ -50,11 +52,15 @@ relationship. The `Employee` class is not exclusively contained by another class
 
 Note that the code for exercise 3.8 was provided to me.
 
+**Keywords:** UML class diagrams, aggregation
+
 ---
 
 #### Exercise 4.4 (w/ namespaces)
 > Implement the code for exercise 3.9 (see assignment 1) so it provides
 > instantiating operations to create objects. Hint: use Idiom 4.2
+
+**Keywords:** namespaces, instantiating operations (constructors are hidden), enums, composition
 
 ---
 
@@ -66,3 +72,5 @@ Note that the code for exercise 3.8 was provided to me.
 I used two variations of the singleton pattern. For Company1 I used references
 to objects, and for Company2 I used pointers to objects. I confirmed with
 valgrind that there are no memory leaks.
+
+**Keywords:** singleton design pattern (creational pattern; reference and pointer based instances; extending pattern to support up to 2 instances), exception handling, static variables
