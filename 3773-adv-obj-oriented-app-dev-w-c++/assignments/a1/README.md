@@ -17,6 +17,8 @@ Run `make` to build the executables.
 I provided many additional operations that are needed for the above four operations,
 but made them private so they're not part of the (public) interface. 
 
+**Keywords:** class organization, (custom) exception handling, friendship, (object) composition, geometry, operator (<<)  overloading, assertion, C++11  features (auto keyword, range-based loops)
+
 #### Exercise 3.9
 > Design and implement the following classes:
 > - `Flower`, with three attributes
@@ -34,9 +36,13 @@ but made them private so they're not part of the (public) interface.
 
 I made two versions for exercise 3.9, ex3.9 and ex3.9v2.
 The second version was made so I could become more familiar with advanced C++
-features such as inheritance, polymorphism, abstract classes, scoped enums,
-friends, and operator overloading. It's not meant to be graded.
-I included it because feedback is always appreciated :).
+features and is not meant to be graded, but feedback is appreciated.
+
+**Keywords (ex3.9):** enums, composition (aka nested objects)
+
+**Keywords (ex3.9v2):** inheritance, polymorphism, scoped enums (C++11), abstract class, friendship, operator overloading
 
 #### Exercise 3.10
 > Repeat exercise 3.9 but use pointers to represent a flower and a book.
+
+**Keywords (ex3.9):** enums, composition, pointers, copy constructor, copy assignment operator, destructor
