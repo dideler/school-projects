@@ -7,6 +7,8 @@ Built and tested with gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5).
 You need minimum GCC 4.5, otherwise try Clang.  
 Run `make` to build the executables.
 
+---
+
 #### Exercise 3.3
 > Write a class `Lines` that provides the following four operations on lines:
 > - test if two lines are parallel
@@ -18,6 +20,8 @@ I provided many additional operations that are needed for the above four operati
 but made them private so they're not part of the (public) interface. 
 
 **Keywords:** class organization, (custom) exception handling, friendship, (object) composition, geometry, operator (<<)  overloading, assertion, C++11  features (auto keyword, range-based loops)
+
+---
 
 #### Exercise 3.9
 > Design and implement the following classes:
@@ -41,6 +45,8 @@ features and is not meant to be graded, but feedback is appreciated.
 **Keywords (ex3.9):** enums, composition (aka nested objects)
 
 **Keywords (ex3.9v2):** inheritance, polymorphism, scoped enums (C++11), abstract class, friendship, operator overloading
+
+---
 
 #### Exercise 3.10
 > Repeat exercise 3.9 but use pointers to represent a flower and a book.
