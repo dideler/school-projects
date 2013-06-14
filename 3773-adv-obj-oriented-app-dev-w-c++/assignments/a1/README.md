@@ -45,4 +45,4 @@ features and is not meant to be graded, but feedback is appreciated.
 #### Exercise 3.10
 > Repeat exercise 3.9 but use pointers to represent a flower and a book.
 
-**Keywords (ex3.9):** enums, composition, pointers, copy constructor, copy assignment operator, destructor
+**Keywords:** enums, composition, pointers, copy constructor, copy assignment operator, destructor
