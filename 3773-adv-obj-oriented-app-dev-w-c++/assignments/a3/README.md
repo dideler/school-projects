@@ -14,12 +14,7 @@ Run `make` to build the executables.
 > in which the elements of the queue are stored in an array. This class should
 > be stored in a namespace and use exception handling.
 
-TIPS:
-- code provided for example 5.3 (which is based on example 3.5)
-- exercise 4.9 (code provided) is similar, has namespaces but no exception
-  handling
-
-**Keywords:** namespaces, exception handling, queue
+**Keywords:** namespaces, exception handling, queue, std::copy
 
 ---
 
@@ -35,10 +30,10 @@ derived classes. This means the base class is an abstract class (in C++ this
 requires at least one pure virtual method, aka "primitive operation").
 
 The template method should not be overridden, so it's not defined as `virtual`
-and is public. The template method -- e.g. sort()` -- uses abstract
-(primitive) operations -- e.g. `compare()` that are declared in the abstract
-base class but implemented in the derived classes. These abstract operations are
-(pure) and should be private or protected so the client cannot directly call them.
+and is public. The template method (`sort()`) uses abstract (primitive)
+operations (`compare()`) that are declared in the abstract base class but
+implemented in the derived classes. These abstract operations are (pure) virtual
+and should be private or protected so the client cannot directly call them.
 
 TODO:
 - `compare()`, primitive operation that compares two elements
