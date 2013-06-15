@@ -16,20 +16,15 @@ CFLAGS = $(STD) $(WARNINGS) -c $(DEBUG) # Compiling flags
 LFLAGS = $(STD) $(WARNINGS) $(DEBUG) # Linking flags
 
 # If make is called without a target, it runs the first target, so this one.
-all: ex4.4 ex4.6 clean
+all: ex5.11 ex5.13 clean
 
-OBJ1 = 4.4-book.o 4.4-flower.o 4.4-gift.o 4.4-test.o
-ex4.4: $(OBJ1)
-	$(CC) $(LFLAGS) $(OBJ1) -o ex4.4
-4.4-book.o: 4.4-book.cpp 4.4-book.h
-	$(CC) $(CFLAGS) 4.4-book.cpp
-4.4-flower.o: 4.4-flower.cpp 4.4-flower.h
-	$(CC) $(CFLAGS) 4.4-flower.cpp
-4.4-gift.o: 4.4-gift.cpp 4.4-gift.h
-	$(CC) $(CFLAGS) 4.4-gift.cpp
-4.4-gift.h: 4.4-book.h 4.4-flower.h
-4.4-test.o: 4.4-test.cpp 4.4-gift.h
-	$(CC) $(CFLAGS) 4.4-test.cpp
+OBJ1 = 5.11-queue.o 5.11-test.o
+ex5.11: $(OBJ1)
+	$(CC) $(LFLAGS) $(OBJ1) -o ex5.11
+5.11-queue.o: 5.11-queue.cpp 5.11-queue.h
+	$(CC) $(CFLAGS) 5.11-queue.cpp
+5.11-test.o: 5.11-test.cpp 5.11-queue.h
+	$(CC) $(CFLAGS) 5.11-test.cpp
 
 OBJ2 = 4.6-company1.o 4.6-company2.o 4.6-employee.o 4.6-test.o
 ex4.6: $(OBJ2)
@@ -48,4 +43,4 @@ clean:
 	-rm -f *.o
 
 clean-all:
-	-rm -f *.o ex4.4 ex4.6
+	-rm -f *.o ex5.11 ex5.13

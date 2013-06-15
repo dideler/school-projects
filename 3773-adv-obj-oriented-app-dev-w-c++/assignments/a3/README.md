@@ -7,6 +7,8 @@ Code tested with clang++ version 3.2.
 g++ (minimum GCC 4.5) should also work.  
 Run `make` to build the executables.
 
+---
+
 #### Exercise 5.11
 > Write the class `Queue`, similar to the class `IntStack` from example 5.3,
 > in which the elements of the queue are stored in an array. This class should
@@ -16,6 +18,10 @@ TIPS:
 - code provided for example 5.3 (which is based on example 3.5)
 - exercise 4.9 (code provided) is similar, has namespaces but no exception
   handling
+
+**Keywords:** namespaces, exception handling, queue
+
+---
 
 #### Exercise 5.13
 > Write a class derived from the class `BenchmarkClass` from example 5.4 to
@@ -38,3 +44,5 @@ TODO:
 - `compare()`, primitive operation that compares two elements
 - abstract base class has template method `sort()` that uses `compare()`
 - various derived classes define different ways of comparing elements
+
+**Keywords:**
