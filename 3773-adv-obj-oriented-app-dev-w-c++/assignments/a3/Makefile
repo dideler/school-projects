@@ -26,18 +26,17 @@ ex5.11: $(OBJ1)
 5.11-test.o: 5.11-test.cpp 5.11-queue.h
 	$(CC) $(CFLAGS) 5.11-test.cpp
 
-OBJ2 = 4.6-company1.o 4.6-company2.o 4.6-employee.o 4.6-test.o
-ex4.6: $(OBJ2)
-	$(CC) $(LFLAGS) $(OBJ2) -o ex4.6
-4.6-employee.o: 4.6-employee.cpp 4.6-employee.h
-	$(CC) $(CFLAGS) 4.6-employee.cpp
-4.6-company1.o: 4.6-company1.cpp 4.6-company1.h
-	$(CC) $(CFLAGS) 4.6-company1.cpp
-4.6-company1.h: 4.6-employee.h
-4.6-company2.o: 4.6-company2.cpp 4.6-company2.h
-	$(CC) $(CFLAGS) 4.6-company2.cpp
-4.6-test.o: 4.6-test.cpp 4.6-company1.h 4.6-company2.h
-	$(CC) $(CFLAGS) 4.6-test.cpp
+OBJ2 = 5.13-sort.o 5.13-mergesort.o 5.13-quicksort.o 5.13-test.o
+ex5.13: $(OBJ2)
+	$(CC) $(LFLAGS) $(OBJ2) -o ex5.13
+5.13-sort.o: 5.13-sort.cpp 5.13-sort.h
+	$(CC) $(CFLAGS) 5.13-sort.cpp
+5.13-mergesort.o: 5.13-mergesort.cpp 5.13-mergesort.h 5.13-sort.h
+	$(CC) $(CFLAGS) 5.13-mergesort.cpp
+5.13-quicksort.o: 5.13-quicksort.cpp 5.13-quicksort.h 5.13-sort.h
+	$(CC) $(CFLAGS) 5.13-quicksort.cpp
+5.13-test.o: 5.13-test.cpp 5.13-sort.h 5.13-mergesort.h 5.13-quicksort.h
+	$(CC) $(CFLAGS) 5.13-test.cpp
 
 clean:
 	-rm -f *.o
