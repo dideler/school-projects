@@ -5,13 +5,11 @@
 //
 // Sample main program for exercise 6-1.
 
-#include <iostream>
-using namespace std;
-
 #include "ex6.1.cachedapplication.h"
 #include "ex6.1.regularapplication.h"
 #include <iostream>
 #include <string>
+using namespace std;
 
 int main(int argc, char* argv[])
 {
