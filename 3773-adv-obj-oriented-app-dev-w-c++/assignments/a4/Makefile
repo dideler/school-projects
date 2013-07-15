@@ -38,17 +38,14 @@ ex6.3: $(OBJ1)
 6.3-test.o: 6.3-test.cpp 6.3-encryption1_product.h
 	$(CC) $(CFLAGS) 6.3-test.cpp
 
-OBJ2 = 5.13-sort.o 5.13-mergesort.o 5.13-quicksort.o 5.13-test.o
+OBJ2 = 6.10-mystring.o 6.10-test.o
 ex6.10: $(OBJ2)
 	$(CC) $(LFLAGS) $(OBJ2) -o ex6.10
-5.13-sort.o: 5.13-sort.cpp 5.13-sort.h
-	$(CC) $(CFLAGS) 5.13-sort.cpp
-5.13-mergesort.o: 5.13-mergesort.cpp 5.13-mergesort.h 5.13-sort.h
-	$(CC) $(CFLAGS) 5.13-mergesort.cpp
-5.13-quicksort.o: 5.13-quicksort.cpp 5.13-quicksort.h 5.13-sort.h
-	$(CC) $(CFLAGS) 5.13-quicksort.cpp
-5.13-test.o: 5.13-test.cpp 5.13-sort.h 5.13-mergesort.h 5.13-quicksort.h
-	$(CC) $(CFLAGS) 5.13-test.cpp
+6.10-mystring.o: 6.10-mystring.cpp 6.10-mystring.h
+	$(CC) $(CFLAGS) 6.10-mystring.cpp
+6.10-mystring.h: 6.10-mystring-ifc.h
+6.10-test.o: 6.10-test.cpp 6.10-mystring.h
+	$(CC) $(CFLAGS) 6.10-test.cpp
 
 clean:
 	-rm -f *.o
