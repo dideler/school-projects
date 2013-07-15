@@ -61,6 +61,11 @@ create and use a product.
 Typically, you need at most one instance per concrete factory in your
 application, so concrete factories are often implemented as singletons.
 
+**Note:** The difference between the abstract factory pattern and factory pattern is
+that the former creates concrete products via dedicated concrete factories based
+off of an abstract factory, whereas the latter creates concrete products via
+a single factory.
+
 **Keywords:** abstract factory pattern, template method pattern, cryptography,
               decltype, ...
 
@@ -69,6 +74,56 @@ application, so concrete factories are often implemented as singletons.
 #### Exercise 6.10
 > Use the object design pattern to implement exercise 6.9 (code provided).
 
-TODO: provide summary of **object adapter pattern**
+An important goal for code is reusability. Programming to an interface, not an
+implementation helps with this. The idea is to have two hierarchies,
+abstraction classes and implementation classes, and they are bridged through
+a delegate. The client uses the abstraction, and the implementation is hidden.
+This minimizes the dependencies between subsystems. Examples of practical
+benefits include reducing compilation time, or clients can use existing API
+calls when a new API version is released.
 
-**Keywords:** object adapter pattern, ...
+The **adapter design pattern** is used to create a new class interface by
+converting an existing interface. The adapter lets two classes work together,
+even though they have _incompatible_ interfaces. This is useful when an
+application needs _almost_ the same interface but with some minor differences.
+Consider this pattern when modifying the existing class interface is not a
+feasible solution.
+
+There are two kinds of adapters: **class adapters** and **object adapters**.
+Object adapters are recommended over class adapters, especially if you need to
+adapt several existing classes.
+
+The new interface will be a pure abstract class, and is implemented using the
+implementation provided by the existing class. You need to write an _adapter
+mixin class_ to connect the new and old interface.
+**The adapter class will provide the implementation of the new interface,
+building on top of the old interface's implementation.**
+The structure of this class differs whether you use a class or object adapter.
+The new interface and the adapter class should use the same namespace.
+
+<dl>
+  <dt>Class adapter</dt>
+  <dd>
+    The adapter class uses multiple inheritance: it inherits the new interface
+    and the implementation of the old interface (via private inheritance).
+
+    Implementations of the old interface are used by refering the base class,
+    e.g. `namespace::OldClass::operation();`
+  </dd>
+  <dt>Object adapter</dt>
+  <dd>
+    The adapter class only inherits the new interface and uses object
+    composition. It contains a private encapsulated member (e.g. a pointer to
+    the old class and is often called `adaptee_`). The constructor takes in (a
+    pointer to) an instance of the old class and uses it to initialize the class
+    member.
+
+    Implementations of the old interface are used by having the composited
+    object (e.g. "adaptee") call the operations.
+  </dd>
+</dl>
+
+**Note:** Structural design patterns (e.g. bridge and adapter patterns) describe
+how to compose existing objects and classes to form new structures.
+
+**Keywords:** (object) adapter pattern, adapting an existing class
