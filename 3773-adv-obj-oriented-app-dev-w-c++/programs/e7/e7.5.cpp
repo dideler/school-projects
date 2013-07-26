@@ -2,11 +2,11 @@
 // A program for the book:
 //  "C++ Programming with Design Patterns Revealed", published by Addison-Wesley
 // Sample main program for Exercise 7-5
-// File: e7.5.cpp
 
-#include "e7.5-list.h"
 #include <iostream>
 using namespace std;
+
+#include "e7.5-list.h"
 using namespace LIST_ITERATION_NAMESPACE;
 
 void show(List& h)

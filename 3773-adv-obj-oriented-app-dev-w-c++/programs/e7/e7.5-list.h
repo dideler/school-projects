@@ -4,7 +4,6 @@
 //
 // Exercise 7.5
 // The code for ex7.1 has been modified to add a link from ListIterator to List.
-// File: e7.5-list.h
 
 #ifndef E7_5_LIST_H
 #define E7_5_LIST_H
@@ -24,8 +23,8 @@ class List
   List();
   virtual ~List();
   void insert(const T&); // insert in front
-  void removeFirst(T&) throw(domain_error);  // delete first; throw if fail
-  int size() const;  // size of the list
+  void removeFirst(T&) throw(domain_error); // delete first; throw if fail
+  int size() const; // size of the list
 
   class ListIterator // nested class
   {
