@@ -16,39 +16,21 @@ CFLAGS = $(STD) $(WARNINGS) -c $(DEBUG) # Compiling flags
 LFLAGS = $(STD) $(WARNINGS) $(DEBUG) # Linking flags
 
 # If make is called without a target, it runs the first target, so this one.
-all: ex6.3 ex6.10 clean
+all: ex7.11 clean
 
-OBJ1 = 6.3-factory.o 6.3-encryption1_factory.o 6.3-encryption2_factory.o \
-			 6.3-product.o 6.3-encryption1_product.o 6.3-encryption2_product.o \
-			 6.3-test.o
-ex6.3: $(OBJ1)
-	$(CC) $(LFLAGS) $(OBJ1) -o ex6.3
-6.3-factory.o: 6.3-factory.cpp 6.3-factory.h 6.3-product.h
-	$(CC) $(CFLAGS) 6.3-factory.cpp
-6.3-encryption1_factory.o: 6.3-encryption1_factory.cpp 6.3-encryption1_factory.h 6.3-factory.h
-	$(CC) $(CFLAGS) 6.3-encryption1_factory.cpp
-6.3-encryption2_factory.o: 6.3-encryption2_factory.cpp 6.3-encryption2_factory.h 6.3-factory.h
-	$(CC) $(CFLAGS) 6.3-encryption2_factory.cpp
-6.3-product.o: 6.3-product.cpp 6.3-product.h
-	$(CC) $(CFLAGS) 6.3-product.cpp
-6.3-encryption1_product.o: 6.3-encryption1_product.cpp 6.3-encryption1_product.h 6.3-product.h
-	$(CC) $(CFLAGS) 6.3-encryption1_product.cpp
-6.3-encryption2_product.o: 6.3-encryption2_product.cpp 6.3-encryption2_product.h 6.3-product.h
-	$(CC) $(CFLAGS) 6.3-encryption2_product.cpp
-6.3-test.o: 6.3-test.cpp 6.3-encryption1_product.h
-	$(CC) $(CFLAGS) 6.3-test.cpp
-
-OBJ2 = 6.10-mystring.o 6.10-test.o
-ex6.10: $(OBJ2)
-	$(CC) $(LFLAGS) $(OBJ2) -o ex6.10
-6.10-mystring.o: 6.10-mystring.cpp 6.10-mystring.h
-	$(CC) $(CFLAGS) 6.10-mystring.cpp
-6.10-mystring.h: 6.10-mystring-ifc.h
-6.10-test.o: 6.10-test.cpp 6.10-mystring.h
-	$(CC) $(CFLAGS) 6.10-test.cpp
+OBJ1 = 7.11-point.o 7.11-segment.o 7.11-test.o
+ex7.11: $(OBJ1)
+	$(CC) $(LFLAGS) $(OBJ1) -o ex7.11
+7.11-point.o: 7.11-point.cpp 7.11-point.h
+	$(CC) $(CFLAGS) 7.11-point.cpp
+7.11-segment.o: 7.11-segment.cpp 7.11-segment.h
+	$(CC) $(CFLAGS) 7.11-segment.cpp
+7.11-segment.h: 7.11-point.h
+7.11-test.o: 7.11-test.cpp 7.11-segment.h
+	$(CC) $(CFLAGS) 7.11-test.cpp
 
 clean:
 	-rm -f *.o
 
 clean-all:
-	-rm -f *.o ex6.3 ex6.10
+	-rm -f *.o ex7.11
