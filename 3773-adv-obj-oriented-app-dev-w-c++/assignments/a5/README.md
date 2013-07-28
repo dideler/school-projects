@@ -26,4 +26,5 @@ told not to re-do it.
 > Use the same testing criteria as in exercise 7.10.
 > In addition, test your class with a list of lists of integers.
 
-**Keywords:** templates (generic/parameterized classes and member operations)
+**Keywords:** templates (generic/parameterized classes and member operations),
+              designing iterators

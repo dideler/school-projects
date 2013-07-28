@@ -13,11 +13,13 @@
  * @version 1.0
  */
 
-#include "7.11-point.h"
-#include "7.11-segment.h"
-
 #include <iostream>
 using namespace std;
+
+#include "7.11-point.h"
+#include "7.11-segment.h" 
+#include "7.11-list.h" 
+using namespace mylist;
 
 int main()
 {
@@ -28,4 +30,9 @@ int main()
 
   Segment s(p0, p1);
   cout << s << endl;
+
+  //List<Point> points;
+  //List<Segment> segments;
+  //List<List<int>> ints;
+  List<int> ints;
 }
