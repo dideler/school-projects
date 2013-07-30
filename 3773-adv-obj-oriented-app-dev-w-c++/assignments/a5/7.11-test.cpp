@@ -38,13 +38,30 @@ int main()
   //List<List<int>> ints;
   List<int> ints;
 
-  /*
   for (int i = 1; i <= 5; ++i)
-    ints.insert(i);
-  for (auto it = ints.begin(); it != ints.end(); ++it)
-    cout << *it << endl; //TODO add overloaded ==, !=, ++ (postfix)
-  */
+    ints.push_front(i);
 
-  //auto it = ints.begin();
-  //cout << *it << endl;
+  for (auto it = ints.begin(); it != ints.end(); ++it)
+    cout << *it << ' ';
+  cout << endl;
+
+
+  cout << "front = " << ints.front() << endl;
+  if (!ints.empty())
+  {
+    ints.pop_front();
+    cout << "popped front" << endl;
+  }
+  cout << "front = " << ints.front() << endl;
+  
+  cout << "back = " << ints.back() << endl;
+
+  cout << "size = " << ints.size() << endl;
+
+  for (int i = 0; i < ints.size(); ++i)
+    cout << "[" << i << "] = " << ints[i] << endl;
+  
+  for (auto it = ints.begin(); it != ints.end(); ++it)
+    cout << *it << ' ';
+  cout << endl;
 }
