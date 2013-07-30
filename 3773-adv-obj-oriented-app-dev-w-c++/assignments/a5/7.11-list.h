@@ -19,10 +19,6 @@
 #ifndef LIST_H_
 #define LIST_H_
 
-#define DISALLOW_COPY_AND_ASSIGN(List) \
-  List(const List<T>&);                \
-  List<T> &operator=(const List<T>&);
-
 #include <cstddef> // For size_t.
 
 namespace mylist
@@ -44,6 +40,24 @@ class List
 {
  public:
   List() : head_(nullptr), size_(0) {}
+
+  List(const List<T> &other) : size_(other.size_)
+  {
+    if (other.head_ == nullptr) // Empty list.
+      head_ = nullptr;
+    else
+      head_ = new Link<T>(*(other.head_));
+  }
+
+  List<T> &operator=(const List<T> &other)
+  {
+    if (this != &other)
+    {
+      size_ = other.size_;
+      (*head_) = (*other.head_);
+    }
+    return *this;
+  }
 
   ~List() { while (size_ > 0) pop_front(); }
 
@@ -127,7 +141,6 @@ class List
   ListIterator<T> end() { return ListIterator<T>(nullptr, *this); }
 
  private:
-  DISALLOW_COPY_AND_ASSIGN(List);
   Link<T> *head_; // The first link in the list.
   size_t size_;
 };
