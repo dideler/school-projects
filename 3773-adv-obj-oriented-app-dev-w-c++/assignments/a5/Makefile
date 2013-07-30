@@ -8,7 +8,6 @@
 # http://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/makefile.html
 
 CC = clang++
-GCC = g++
 STD = -std=c++0x  # Use the C++11 standard.
 DEBUG = -g
 OPTIMIZE = -O3
@@ -19,7 +18,7 @@ LFLAGS = $(STD) $(WARNINGS) $(DEBUG) # Linking flags
 # If make is called without a target, it runs the first target, so this one.
 all: ex7.11 clean
 
-OBJ1 = 7.11-point.o 7.11-segment.o 7.11-list.o 7.11-test.o
+OBJ1 = 7.11-point.o 7.11-segment.o 7.11-test.o
 ex7.11: $(OBJ1)
 	$(CC) $(LFLAGS) $(OBJ1) -o ex7.11
 7.11-point.o: 7.11-point.cpp 7.11-point.h
@@ -27,33 +26,8 @@ ex7.11: $(OBJ1)
 7.11-segment.o: 7.11-segment.cpp 7.11-segment.h
 	$(CC) $(CFLAGS) 7.11-segment.cpp
 7.11-segment.h: 7.11-point.h
-7.11-list.o: 7.11-list.cpp 7.11-list.h
-	$(CC) $(CFLAGS) 7.11-list.cpp
 7.11-test.o: 7.11-test.cpp 7.11-segment.h 7.11-list.h
 	$(CC) $(CFLAGS) 7.11-test.cpp
-
-ex7.11b: $(OBJ1)
-	$(CC) $(LFLAGS) $(OBJ1) -o ex7.11
-7.11-point.o: 7.11-point.cpp 7.11-point.h
-	$(CC) $(CFLAGS) 7.11-point.cpp
-7.11-segment.o: 7.11-segment.cpp 7.11-segment.h
-	$(CC) $(CFLAGS) 7.11-segment.cpp
-7.11-segment.h: 7.11-point.h
-7.11-list.o: 7.11-list.h
-	$(CC) $(CFLAGS) 7.11-list.h
-7.11-test.o: 7.11-test.cpp 7.11-segment.h 7.11-list.h
-	$(CC) $(CFLAGS) 7.11-test.cpp
-
-OBJ2 = 7.11-point.o 7.11-segment.o 7.11-test.o
-ex7.11GCC: $(OBJ2)
-	$(GCC) $(LFLAGS) $(OBJ2) -o ex7.11
-7.11-point.o: 7.11-point.cpp 7.11-point.h
-	$(GCC) $(CFLAGS) 7.11-point.cpp
-7.11-segment.o: 7.11-segment.cpp 7.11-segment.h
-	$(GCC) $(CFLAGS) 7.11-segment.cpp
-7.11-segment.h: 7.11-point.h
-7.11-test.o: 7.11-test.cpp 7.11-segment.h 7.11-list.h
-	$(GCC) $(CFLAGS) 7.11-test.cpp
 
 clean:
 	-rm -f *.o
