@@ -2,7 +2,7 @@
  * COMP 3773 - Assignment 5 - Exercise 7.11
  * From the book "C++ Programming with Design Patterns Revealed"
  *
- * Implementation (definition) of Point class.
+ * Implementation (definitions) of the basic Point class.
  *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  * @student# 100122809

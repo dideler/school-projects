@@ -2,7 +2,7 @@
  * COMP 3773 - Assignment 5 - Exercise 7.11
  * From the book "C++ Programming with Design Patterns Revealed"
  *
- * Interface (declaration) of Segment class.
+ * Interface (declarations) for the basic Segment class.
  * A simple line segment (i.e. finite length) made of two points.
  *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
@@ -17,7 +17,7 @@
 #include <ostream>
 using std::ostream;
 
-class Point; // forward declaration
+class Point; // Forward declaration.
 
 class Segment
 {

@@ -2,7 +2,7 @@
  * COMP 3773 - Assignment 5 - Exercise 7.11
  * From the book "C++ Programming with Design Patterns Revealed"
  *
- * Interface (declaration) of Point class.
+ * Interface (declarations) of the basic Point class.
  * A simple 3-dimensional point.
  *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
