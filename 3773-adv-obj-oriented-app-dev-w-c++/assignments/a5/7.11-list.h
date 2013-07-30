@@ -21,42 +21,25 @@ namespace mylist
 
 // Forward declarations (can be avoided if member classes made public).
 //struct Link;
-//class ListIterator;
+template <typename T>
+class ListIterator;
+
+template <typename T>
+struct Link
+{
+  Link(const T &t, Link *l) : value(t), next(l) {}
+  T value;
+  Link *next;
+};
 
 template <typename T> // Note: `class T` can also be used.
 class List
 {
-  //template <typename T>
-  struct Link
-  {
-    Link(const T&, Link*);
-    T value;
-    Link *next;
-  };
-
-  //template <typename T>
-  class ListIterator
-  {
-   public:
-    ListIterator(Link*, List&);
-    ListIterator& operator++(); // Prefix operator; modifier thus member.
-
-    // Element access
-    T& operator*();
-    const T& operator*() const;
-
-   private: 
-    Link *current_; // Current element.
-    List &list_;  // List being iterated.
-
-    //friend bool operator==(const ListIterator&, const ListIterator&);
-    friend class List;
-  };
  public:
-  List();
+  List() : head_(nullptr), size_(0) {}
   //List(const List<T> &other); // TODO keep?
   //List<T>& operator=(const List<T> &other); // TODO keep?
-  ~List();
+  ~List() { while (size_ > 0) pop_front(); }
 
   // Element access
   //List<T>& operator[](int);
@@ -67,38 +50,114 @@ class List
   //const T& back() const;
   
   // Modifiers
-  void insert(const T &element);
-  void pop_front();
+  void insert(const T &element)
+  {
+    Link<T> *temp = new Link<T>(element, head_);
+    head_ = temp;
+    ++size_;
+  }
+
+  void pop_front()
+  {
+    Link<T> *temp = head_;
+    head_ = temp->next;
+    delete temp;
+    --size_;
+  }
 
   // Capacity
-  bool empty() const;
-  int size() const;
+  bool empty() const
+  {
+    return size_ == 0;
+  }
+
+  int size() const
+  {
+    return size_;
+  }
 
   // Iterators
-  ListIterator begin();
-  ListIterator end();
+  ListIterator<T> begin()
+  {
+    return ListIterator<T>(head_, *this);
+  }
+
+  ListIterator<T> end()
+  {
+    return ListIterator<T>(nullptr, *this);
+  }
 
   //typedef T element_type; // Used to be useful for retrieving type of a
                             // template's argument. Can use `auto` since C++11.
 
  private:
-  Link *head_;
+  Link<T> *head_;
   size_t size_;
-
 };
-/* 
-// Declarations of helpers // TODO verify typename needed here, shouldn't be
-template <typename T>
-typename List<T>::ListIterator operator++(typename List<T>::ListIterator&, int); // Postfix. // TODO try without dummy int param
 
 template <typename T>
-bool operator==(const typename List<T>::ListIterator&,
-                const typename List<T>::ListIterator&);
+class ListIterator
+{
+  public:
+  ListIterator(Link<T> *t, List<T> &l) : current_(t), list_(l) {}
+
+  ListIterator& operator++() // Prefix.
+  {
+    current_ = current_->next;
+    return *this;
+  }
+ 
+  /*
+  ListIterator& operator++(int) // Postfix (dummy int differentiates it).
+  {
+    ListIterator temp(*this);
+    ++(*this);
+    return temp;
+  }
+  */
+
+  // Element access
+  T& operator*()
+  {
+    return current_->value;
+  }
+
+  const T& operator*() const
+  {
+    return current_->value;
+  }
+
+  private: 
+  Link<T> *current_; // Current element.
+  List<T> &list_;  // List being iterated.
+
+  template <typename U>
+  friend bool operator==(const ListIterator<U>&, const ListIterator<U>&);
+  friend class List<T>;
+};
+
+// Helpers
+
+template <typename T> // Postfix. Helper because it returns a new object.
+ListIterator<T> operator++(ListIterator<T> &iter, int)
+{
+  ListIterator<T> temp(iter);
+  ++iter;
+  return temp;
+} // Preference in the book is to have this as a helper.
 
 template <typename T>
-bool operator!=(const typename List<T>::ListIterator&,
-                const typename List<T>::ListIterator&); 
-*/
+bool operator==(const ListIterator<T> &a, const ListIterator<T> &b)
+{
+  return a.current_ == b.current_;
+}
+
+template <typename T>
+bool operator!=(const ListIterator<T> &a, const ListIterator<T> &b)
+{
+  return !(a == b);
+}
+
 } // namespace mylist
 
 #endif

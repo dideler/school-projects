@@ -19,6 +19,8 @@ using namespace std;
 #include "7.11-point.h"
 #include "7.11-segment.h" 
 #include "7.11-list.h" 
+//#include "7.11-list.cpp" // Necessary to avoid linker errors due to templates.
+                         // Alternative solutions exist: http://goo.gl/ObPUu5
 using namespace mylist;
 
 int main()
@@ -35,4 +37,14 @@ int main()
   //List<Segment> segments;
   //List<List<int>> ints;
   List<int> ints;
+
+  /*
+  for (int i = 1; i <= 5; ++i)
+    ints.insert(i);
+  for (auto it = ints.begin(); it != ints.end(); ++it)
+    cout << *it << endl; //TODO add overloaded ==, !=, ++ (postfix)
+  */
+
+  //auto it = ints.begin();
+  //cout << *it << endl;
 }
