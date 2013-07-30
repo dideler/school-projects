@@ -15,8 +15,8 @@ Code tested with clang++ 3.2. Run `make` to build the executables.
 Note that exercise 7.5 was one of the provided exercises, and therefore I was
 told not to re-do it.
 
-**Keywords:** designing iterators, friends, namespace, exception handling,
-              helpers, overloading operators
+**Keywords:** iterators, friends, namespace, exception handling, helpers,
+              overloading operators
 
 ---
 
@@ -26,5 +26,15 @@ told not to re-do it.
 > Use the same testing criteria as in exercise 7.10.
 > In addition, test your class with a list of lists of integers.
 
+For the template code, I put the declarations and definitions in the header
+file, instead of splitting them up between the header and source files.
+This is to avoid linker errors. Note that alternative workarounds exist.
+For more info:
+- http://stackoverflow.com/questions/5180357/why-do-c-template-definitions-need-to-be-in-the-header
+- http://www.parashift.com/c++-faq-lite/separate-template-fn-defn-from-decl.html
+
+I also avoided using nested/member classes/structs because it unnecessarily
+overcomplicates the code in my opinion.
+
 **Keywords:** templates (generic/parameterized classes and member operations),
-              designing iterators
+              iterators, lists, overloading, friends, helpers, namespace
