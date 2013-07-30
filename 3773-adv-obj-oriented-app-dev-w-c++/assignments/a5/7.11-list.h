@@ -37,26 +37,48 @@ class List
 {
  public:
   List() : head_(nullptr), size_(0) {}
-  //List(const List<T> &other); // TODO keep?
-  //List<T>& operator=(const List<T> &other); // TODO keep?
+  //List(const List<T> &other);
+  //List<T>& operator=(const List<T> &other);
   ~List() { while (size_ > 0) pop_front(); }
 
-  // Element access
-  //List<T>& operator[](int);
-  //const List<T>& operator[](int) const;
-  //T& front(); // TODO
-  //const T& front() const;
+  // Element access:
+
+  // Overloaded subscript operator [] returns the i-th element in the container.
+  // Caution, undefined behaviour if an invalid position or range is specified.
+  T& operator[](int position)
+  {
+    Link<T> *temp = head_;
+    while (position --> 0)
+      temp = temp->next;
+    return temp->value;
+  }
+
+  const T& operator[](int position) const
+  {
+    Link<T> *temp = head_;
+    while (position --> 0)
+      temp = temp->next;
+    return temp->value;
+  }
+
+  T& front() { return head_->value; }
+  
+  const T& front() const { return head_->value; }
+
   //T& back(); // TODO try list.end() - 1;
   //const T& back() const;
   
-  // Modifiers
-  void insert(const T &element)
+  // Modifiers:
+
+  // Insert an element from the front.
+  void push_front(const T &element)
   {
     Link<T> *temp = new Link<T>(element, head_);
     head_ = temp;
     ++size_;
   }
 
+  // Remove an element from the front.
   void pop_front()
   {
     Link<T> *temp = head_;
@@ -65,7 +87,8 @@ class List
     --size_;
   }
 
-  // Capacity
+  // Capacity:
+
   bool empty() const
   {
     return size_ == 0;
@@ -76,7 +99,8 @@ class List
     return size_;
   }
 
-  // Iterators
+  // Iterators:
+
   ListIterator<T> begin()
   {
     return ListIterator<T>(head_, *this);
@@ -87,18 +111,15 @@ class List
     return ListIterator<T>(nullptr, *this);
   }
 
-  //typedef T element_type; // Used to be useful for retrieving type of a
-                            // template's argument. Can use `auto` since C++11.
-
  private:
-  Link<T> *head_;
+  Link<T> *head_; // The first link in the list.
   size_t size_;
 };
 
 template <typename T>
 class ListIterator
 {
-  public:
+ public:
   ListIterator(Link<T> *t, List<T> &l) : current_(t), list_(l) {}
 
   ListIterator& operator++() // Prefix.
@@ -107,27 +128,28 @@ class ListIterator
     return *this;
   }
  
-  /*
-  ListIterator& operator++(int) // Postfix (dummy int differentiates it).
-  {
-    ListIterator temp(*this);
-    ++(*this);
-    return temp;
-  }
-  */
+//  ListIterator& operator++(int) // Postfix.
+//  {
+//    ListIterator temp(*this);
+//    ++(*this);
+//    return temp;
+//  }
 
   // Element access
+  
+  // Dereference the iterator to get the current value pointed to.
   T& operator*()
   {
     return current_->value;
   }
 
+  // Dereference the iterator to get the current const value pointed to.
   const T& operator*() const
   {
     return current_->value;
   }
 
-  private: 
+ private: 
   Link<T> *current_; // Current element.
   List<T> &list_;  // List being iterated.
 
@@ -138,13 +160,17 @@ class ListIterator
 
 // Helpers
 
-template <typename T> // Postfix. Helper because it returns a new object.
+// Postfix, post-increments the iterator. Dummy int needed to differentiate.
+// Preference in the book is to have this as a helper because it returns a new
+// object. My preference is to have it as a member, but I still kept it as
+// a helper to demonstrate how to befriend it (see ListIterator class).
+template <typename T>
 ListIterator<T> operator++(ListIterator<T> &iter, int)
 {
   ListIterator<T> temp(iter);
   ++iter;
   return temp;
-} // Preference in the book is to have this as a helper.
+}
 
 template <typename T>
 bool operator==(const ListIterator<T> &a, const ListIterator<T> &b)
