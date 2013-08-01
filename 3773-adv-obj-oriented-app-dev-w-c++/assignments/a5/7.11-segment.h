@@ -23,6 +23,7 @@ class Segment
 {
  public:
   Segment(const Point &p1, const Point &p2);
+  Segment(const Segment &other);
   ~Segment();
 
  private:

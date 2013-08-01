@@ -13,17 +13,18 @@
 #include "7.11-point.h"
 #include "7.11-segment.h"
 
-#include <iostream>
-using namespace std;
-
 Segment::Segment(const Point &p1, const Point &p2)
     : p1_(new Point(p1)),
       p2_(new Point(p2)) {}
 
+Segment::Segment(const Segment &other)
+    : p1_(new Point(*other.p1_)),
+      p2_(new Point(*other.p2_)) {}
+
 Segment::~Segment()
 {
-  if (p1_ != nullptr) delete p1_;
-  if (p2_ != nullptr) delete p2_;
+  delete p1_;
+  delete p2_;
 }
 
 ostream &operator<<(ostream &out, const Segment &s)
