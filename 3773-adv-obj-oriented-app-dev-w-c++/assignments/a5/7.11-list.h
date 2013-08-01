@@ -59,9 +59,9 @@ class List
     return *this;
   }
 
-  ~List() { while (size_ > 0) pop_front(); }
+  ~List() { clear(); }
 
-  // Element access (modifiers and queries):
+  // Element access:
 
   // Access i-th element.
   T& operator[](int position) // Note: [] is called the subscript operator.
@@ -125,6 +125,8 @@ class List
     --size_;
   }
 
+  void clear() { while (size_ > 0) pop_front(); }
+
   // Capacity:
 
   // Test whether container is empty.
@@ -150,7 +152,7 @@ template <typename T>
 class ListIterator
 {
  public:
-  ListIterator(Link<T> *t, List<T> &l) : current_(t), list_(l) {}
+  ListIterator(Link<T> *link, List<T> &list) : current_(link), list_(list) {}
 
   // Prefix (pre-increment). Advances the iterator by one position.
   ListIterator& operator++()
