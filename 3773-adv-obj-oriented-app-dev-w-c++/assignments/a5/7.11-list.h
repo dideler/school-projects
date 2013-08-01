@@ -24,18 +24,18 @@
 namespace mylist
 {
 
-template <typename T>
+template <typename T> // Note: <class T> can also be used.
 class ListIterator; // Forward declaration.
 
 template <typename T>
-struct Link // A list is composed of many links, each holds an element.
+struct Link // A list is composed of many links (aka nodes).
 {
-  Link(const T &t, Link *l) : value(t), next(l) {}
-  T value;
+  Link(const T &value, Link *head) : data(value), next(head) {}
+  T data;
   Link *next;
 };
 
-template <typename T> // Note: <class T> can also be used.
+template <typename T>
 class List
 {
  public:
@@ -69,7 +69,7 @@ class List
     Link<T> *temp = head_;
     while (position --> 0)
       temp = temp->next;
-    return temp->value;
+    return temp->data;
   }
 
   // Access i-th element.
@@ -78,14 +78,14 @@ class List
     Link<T> *temp = head_;
     while (position --> 0)
       temp = temp->next;
-    return temp->value;
+    return temp->data;
   }
 
   // Access first element.
-  T& front() { return head_->value; }
+  T& front() { return head_->data; }
   
   // Access first element.
-  const T& front() const { return head_->value; }
+  const T& front() const { return head_->data; }
 
   // Access last element.
   T& back()
@@ -93,7 +93,7 @@ class List
     Link<T> *temp = head_;
     for (size_t i = 1; i < size_; ++i)
       temp = temp->next;
-    return temp->value;
+    return temp->data;
   }
 
   // Access last element.
@@ -102,7 +102,7 @@ class List
     Link<T> *temp = head_;
     for (size_t i = 1; i < size_; ++i)
       temp = temp->next;
-    return temp->value;
+    return temp->data;
   }
   
   // Modifiers:
@@ -118,9 +118,10 @@ class List
   // Remove an element from the front.
   void pop_front()
   {
-    Link<T> *temp = head_;
-    head_ = temp->next;
-    delete temp;
+    if (size_ <= 0) return;
+    Link<T> *temp = head_->next;
+    delete head_;
+    head_ = temp;
     --size_;
   }
 
@@ -142,11 +143,11 @@ class List
 
  private:
   Link<T> *head_; // The first link in the list.
-  size_t size_;
+  size_t size_; // Number of links in the list.
 };
 
 template <typename T>
-class ListIterator // TODO: More overloaded arithmetic operators would be nice.
+class ListIterator
 {
  public:
   ListIterator(Link<T> *t, List<T> &l) : current_(t), list_(l) {}
@@ -158,25 +159,16 @@ class ListIterator // TODO: More overloaded arithmetic operators would be nice.
     return *this;
   }
   
-//  ListIterator& operator++(int) // Postfix, implemented as helper instead.
-//  {
-//    ListIterator temp(*this);
-//    ++(*this);
-//    return temp;
-//  }
-
-  // Element access
-  
-  // Dereference the iterator to get the current value pointed to.
+  // Dereference the iterator to get the current data pointed to.
   T& operator*()
   {
-    return current_->value;
+    return current_->data;
   }
 
-  // Dereference the iterator to get the current const value pointed to.
+  // Dereference the iterator to get the current const data pointed to.
   const T& operator*() const
   {
-    return current_->value;
+    return current_->data;
   }
 
  private: 
@@ -191,10 +183,8 @@ class ListIterator // TODO: More overloaded arithmetic operators would be nice.
 
 // Helpers
 
-// Postfix (post-increment). Dummy int needed to differentiate.
-// Preference in the book is to have this as a helper because it returns a new
-// object. My preference is to have it as a member, but I still kept it as
-// a helper to demonstrate how to befriend it (see ListIterator class).
+// Postfix (post-increment). Dummy int needed to differentiate from prefix.
+// Textbook says to have this as a helper because it returns a new object.
 template <typename T>
 ListIterator<T> operator++(ListIterator<T> &iter, int)
 {
