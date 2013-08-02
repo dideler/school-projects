@@ -9,8 +9,8 @@
  *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  * @student# 100122809
- * @date July 2013
- * @version 1.0
+ * @date July-August 2013
+ * @version 1.1
  */
 
 #include <iostream>
@@ -51,18 +51,6 @@ void print2d(List<T> &list)
 
 int main()
 {
-  // Create Points.
-  Point p0;
-  Point p1(1, 2, 3);
-  Point p2(3, 2, 1);
-  Point p3(5, 5, 5);
-
-  // Create Segments.
-  Segment s0(p0, p1);
-  Segment s1(p1, p2);
-  Segment s2(p2, p3);
-  Segment s3(p0, p3);
-
   // Test List with a primitive data type.
   List<int> ints;
   for (int i = 1; i <= 5; ++i) ints.push_front(i);
@@ -80,6 +68,10 @@ int main()
     cout << "[" << i << "] = " << ints[i] << endl;
 
   // Test List with Points.
+  Point p0; // 0, 0, 0
+  Point p1(1, 2, 3);
+  Point p2(3, 2, 1);
+  Point p3(5, 5, 5);
   List<Point> points;
   points.push_front(p0);
   points.push_front(p1);
@@ -87,37 +79,44 @@ int main()
   points.push_front(p3);
   cout << "\npoints = "; print(points);
   cout << "size = " << points.size() << endl;
-  while (!points.empty()) points.pop_front();
+  points.clear();
   print(points); // Shouldn't print anything.
 
   // Test List with Segments.
+  Segment s0(p0, p1);
+  Segment s1(p1, p2);
+  Segment s2(p2, p3);
+  Segment s3(p0, p3);
   List<Segment> segments;
+  Segment s(Point(1,2,3), Point(3,2,1));
+  segments.push_front(s);
   segments.push_front(s0);
   segments.push_front(s1);
   segments.push_front(s2);
   segments.push_front(s3);
   cout << "\nsegments = "; print(segments);
   cout << "size = " << segments.size() << endl;
-  while (!points.empty()) points.pop_front();
-  print(points); // Shouldn't print anything.
+  segments.clear();
+  print(segments); // Shouldn't print anything.
 
-  // Test copy and copy assignment.
-  List<int> ints0(ints);
-  cout << "\nints0 = "; print(ints0);
+  // Test copy and assign.
+  List<int> ints0(ints); // Note: `List<int> ints0 = ints` also works.
+  cout << "\nints0 (copied) = "; print(ints0);
 
-  ints0 = ints;
-  cout << "ints0 = "; print(ints0);
+  ints0 = ints; 
+  cout << "ints0 (assigned) = "; print(ints0);
 
   // Test two-dimensional List.
   List<int> ints1;
-  List<int> ints2;
   for (int i = 5; i >= 1; --i) ints1.push_front(i);
+  cout << "ints1 = "; print(ints1);
+
+  List<int> ints2;
   for (int i = 1; i <= 5; ++i) ints2.push_front(i * 2);
-  cout << "\nints1 = "; print(ints1);
   cout << "ints2 = "; print(ints2);
 
   List<List<int>> list_of_ints; // Note: >> is allowed since C++11.
-  list_of_ints.push_front(ints);
+  list_of_ints.push_front(ints0);
   list_of_ints.push_front(ints1);
   list_of_ints.push_front(ints2);
   cout << "\nlist_of_ints = "; print2d(list_of_ints);
