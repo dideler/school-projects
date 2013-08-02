@@ -12,8 +12,8 @@
  *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  * @student# 100122809
- * @date July 2013
- * @version 1.0
+ * @date July-August 2013
+ * @version 1.1
  */
 
 #ifndef LIST_H_
@@ -36,26 +36,31 @@ struct Link // A list is composed of many links (aka nodes).
 };
 
 template <typename T>
-class List
+class List // A generic linked list with some basic operations.
 {
  public:
   List() : head_(nullptr), size_(0) {}
 
-  List(const List<T> &other) : size_(other.size_)
+  List(const List<T> &other)
   {
-    if (other.head_ == nullptr) // Empty list.
-      head_ = nullptr;
-    else
-      head_ = new Link<T>(*(other.head_));
+    head_ = nullptr;
+    size_ = 0;
+
+    if (!other.empty())
+      for (int i = other.size()-1; i > -1; --i)
+        push_front(other[i]);
   }
 
   List<T> &operator=(const List<T> &other)
   {
-    if (this != &other)
-    {
-      size_ = other.size_;
-      (*head_) = (*other.head_);
-    }
+    clear(); // Or, call destructor: this->~List();
+    head_ = nullptr;
+    size_ = 0;
+
+    if (!other.empty())
+      for (int i = other.size()-1; i > -1; --i)
+        push_front(other[i]);
+
     return *this;
   }
 
@@ -63,8 +68,8 @@ class List
 
   // Element access:
 
-  // Access i-th element.
-  T& operator[](int position) // Note: [] is called the subscript operator.
+  // Access i-th element (using the subscript operator).
+  T& operator[](int position)
   {
     Link<T> *temp = head_;
     while (position --> 0)
