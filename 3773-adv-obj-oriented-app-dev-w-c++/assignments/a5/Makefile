@@ -11,7 +11,7 @@ CC = clang++
 STD = -std=c++0x  # Use the C++11 standard.
 DEBUG = -g
 OPTIMIZE = -O3
-WARNINGS = -Wall -Wextra -Werror
+WARNINGS = -Wall -Wextra -Werror -Weffc++
 CFLAGS = $(STD) $(WARNINGS) -c $(DEBUG) # Compiling flags
 LFLAGS = $(STD) $(WARNINGS) $(DEBUG) # Linking flags
 
