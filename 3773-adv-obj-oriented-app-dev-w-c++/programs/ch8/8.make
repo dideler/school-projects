@@ -4,7 +4,7 @@
 
 LIB	= -lm
 CC = g++
-CFLAGS = -Wall -pedantic
+CFLAGS = -Wall -pedantic -std=c++0x
 
 all:  ex8.1 ex8.2 ex8.3 ex8.4 ex8.5 clean
 
