@@ -6,7 +6,7 @@ LIB	= -lm
 CC = g++
 CFLAGS = -Wall -pedantic -std=c++0x
 
-all:  ex8.1 ex8.2 ex8.3 ex8.4 ex8.5 clean
+all:  ex8.1 ex8.2 ex8.3 ex8.4 clean # removed ex8.5
 
 OBJ1 = ex8.1.o 
 ex8.1:	$(OBJ1)	
@@ -32,6 +32,7 @@ ex8.4:	$(OBJ4)
 ex8.4.o:	ex8.4.cpp 
 	$(CC) $(CFLAGS) -c ex8.4.cpp 
 
+# This program has big issues and I'm not sure what it's supposed to do.
 OBJ5 = ex8.5.o 
 ex8.5:	$(OBJ5)	
 	$(CC) $(CFLAGS) $(OBJ5) $(LIB) -o ex8.5
