@@ -3,16 +3,16 @@
  * From the book "C++ Programming with Design Patterns Revealed"
  *
  * Template class SafeList which is derived from std::list and uses exception
- * handling.
+ * handling. Definitions are included in the header to simplify linking.
  *
  * Many of the operations below, such as push_front, push_back, and insert,
  * were overridden to provide unnecessary exception handling. Previously,
- * providing a different type of element would result in a compilation error,
- * which may or may not be preferred by the client. In other words, these
+ * providing an unrelated element type would result in a compilation error,
+ * which is probably preferred by the client. In other words, these specific
  * operations didn't _need_ exception handling to be added for safety, since
  * the error would be caught at compile time.
  *
- * Possible future improvements:
+ * Ideas for improvements:
  * - composition instead of inheritance (but exercise requires inheritance)
  * - adapter design pattern for more decoupling (but more overhead)
  * - use more specific exceptions (maybe even custom exceptions)
@@ -20,7 +20,7 @@
  * AFAIK, if I override one variation of an overloaded operation, I need to
  * override all variations (even if they don't need exception handling).
  * Otherwise the client code will always call the child class operations,
- * which fails if they do not exist.
+ * which fails if they do not exist yet.
  *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  * @student# 100122809
@@ -31,7 +31,6 @@
 #ifndef SAFELIST_H_
 #define SAFELIST_H_
 
-#include <iterator> // TODO
 #include <list>
 #include <stdexcept>
 #include <type_traits> // std::is_integral

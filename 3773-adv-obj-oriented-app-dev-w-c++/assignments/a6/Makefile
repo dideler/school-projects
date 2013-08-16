@@ -12,25 +12,20 @@ STD = -std=c++0x  # Use the C++11 standard.
 DEBUG = -g
 OPTIMIZE = -O3
 WARNINGS = -Wall -Wextra -Werror -Weffc++
-CFLAGS = $(STD) $(WARNINGS) -c $(DEBUG) # Compiling flags
+CFLAGS = $(STD) -c $(DEBUG) # Compiling flags
 LFLAGS = $(STD) $(WARNINGS) $(DEBUG) # Linking flags
 
 # If make is called without a target, it runs the first target, so this one.
-all: ex7.11 clean
+all: ex8.5 clean
 
-OBJ1 = 7.11-point.o 7.11-segment.o 7.11-test.o
-ex7.11: $(OBJ1)
-	$(CC) $(LFLAGS) $(OBJ1) -o ex7.11
-7.11-point.o: 7.11-point.cpp 7.11-point.h
-	$(CC) $(CFLAGS) 7.11-point.cpp
-7.11-segment.o: 7.11-segment.cpp 7.11-segment.h
-	$(CC) $(CFLAGS) 7.11-segment.cpp
-7.11-segment.h: 7.11-point.h
-7.11-test.o: 7.11-test.cpp 7.11-segment.h 7.11-list.h
-	$(CC) $(CFLAGS) 7.11-test.cpp
+OBJ1 = 8.5-test.o
+ex8.5: $(OBJ1)
+	$(CC) $(LFLAGS) $(OBJ1) -o ex8.5
+8.5-test.o: 8.5-test.cpp 8.5-safelist.h
+	$(CC) $(CFLAGS) 8.5-test.cpp
 
 clean:
 	-rm -f *.o
 
 clean-all:
-	-rm -f *.o ex7.11
+	-rm -f *.o ex8.5 ex8.9
