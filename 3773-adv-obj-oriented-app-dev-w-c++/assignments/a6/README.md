@@ -11,7 +11,7 @@ Code tested with clang++ 3.2. Run `make` to build the executables.
 > Implement a class, `SafeList`, that is derived from the STL class `list` and
 > uses exception handling.
 
-**Keywords:** exception handling
+**Keywords:** exception handling, wrapper class, templates
 
 ---
 
