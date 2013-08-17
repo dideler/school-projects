@@ -5,24 +5,25 @@
  * Interface of MyString::StringIfc using an object adapter.
  * There are four helpers, to insert and remove strings.
  *
+ * Object adapter pattern uses inheritance and object composition.
+ * Class adapter pattern uses multiple inheritance.
+ *
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  * @student# 100122809
  * @date July 2013
  * @version 1.0
  */
 
-#include "6.10-mystring-ifc.h"
+#include <algorithm>
 #include <stdexcept>
 #include <string>
 
-#include <algorithm>
+#include "6.10-mystring-ifc.h"
 
 namespace MyString
 {
 
-// Note the multiple and private inheritance.
-// All public/protected members from std::string become private in this class.
-class string : public StringIfc/*, private std::string*/
+class string : public StringIfc
 {
   // Helper functions - friends have access to this class' privates.
 
@@ -54,7 +55,8 @@ class string : public StringIfc/*, private std::string*/
   virtual char at(int) const throw(std::domain_error); 
 
  private:
-  std::string rep_;
+  std::string rep_; // std::string is the adaptee class.
+                    // Using object composition to delegate requests to it.
 };
 
 } // namespace MyString
