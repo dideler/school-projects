@@ -25,7 +25,7 @@
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  * @student# 100122809
  * @date August 2013
- * @version 1.0
+ * @version 1.1
  */
 
 #ifndef SAFELIST_H_
@@ -33,7 +33,6 @@
 
 #include <list>
 #include <stdexcept>
-#include <type_traits> // std::is_integral
 using std::list;
 using std::domain_error;
 
@@ -109,11 +108,6 @@ class SafeList : public list<T>
   void assign(InputIterator first, InputIterator last, InputIterator end)
       throw(domain_error)
   {
-    // Check whether it's an integral type. If so, it's not an iterator.
-    // Does not guarantee that it _is_ an iterator, so it's not much safety and
-    // therefore I only use it in this function, as an example.
-    if (std::is_integral<InputIterator>::value)
-      throw domain_error("Not an iterator");
     if (isValidRange(first, last, end))
       list<T>::assign(first, last);
     else
