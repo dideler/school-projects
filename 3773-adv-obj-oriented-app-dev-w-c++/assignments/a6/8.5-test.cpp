@@ -112,7 +112,6 @@ int main()
     sl.insert(sl.begin(), sl.begin(), it);
     print(sl);
 
-
     cout << "erasing element at iterator it: " << *--it << endl;
     sl.erase(it);
     print(sl);

@@ -8,10 +8,8 @@ Code tested with clang++ 3.2. Run `make` to build the executables.
 ---
 
 #### Exercise 8.5
-> Implement a class, `SafeList`, that is derived from the STL class `list` and
-> uses exception handling.
-
-**Keywords:** exception handling, wrapper class, templates
+> Implement a [wrapper] class, `SafeList`, that is derived from the STL class
+> `list` and uses exception handling.
 
 ---
 
@@ -21,4 +19,7 @@ Code tested with clang++ 3.2. Run `make` to build the executables.
 > that appear to be useful for operating on points. Then use this class and the
 > STL class `list` to write a class representing a list of points.
 
-**Keywords:** ...
+I decided to make my `PointList` class (which represents a list of points)
+derive from my `SafeList` class from exercise 8.5 (see above), which in turn is
+derived from the STL class `list`. It's a good reuse of code in my opinion, but
+if this is not what the exercise intended, then I'll rewrite my PointList class.
