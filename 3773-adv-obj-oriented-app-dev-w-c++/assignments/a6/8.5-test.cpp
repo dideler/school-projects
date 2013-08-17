@@ -11,7 +11,6 @@
  */
 
 #include <iostream>
-#include <list> // TODO
 #include <vector>
 using namespace std;
 
