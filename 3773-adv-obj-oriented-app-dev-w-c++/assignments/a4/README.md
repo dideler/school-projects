@@ -51,6 +51,9 @@ AbstractFactory* factory = AbstractFactory::getFactory(string); // instantiating
 AbstractProduct* product = factory->createProduct(string); // factory method: returns a concrete product
 product->doSomething();
 ```
+![](http://i.imgur.com/0jcpdt9.png)
+_(Alternative implementation)_
+
 The factory method is often useful in combination with the template method
 pattern (which defines an algorithm in terms of abstract operations). If using a
 template method, the factory method should be hidden from the client (i.e.
@@ -115,7 +118,7 @@ off of an abstract factory, whereas the latter creates concrete products via
 a single factory.
 
 **Keywords:** abstract factory pattern, template method pattern, cryptography,
-              decltype, ...
+              decltype, polymorphism
 
 ---
 
