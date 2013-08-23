@@ -58,6 +58,54 @@ private) and there shouldn't be an instantiating operation (i.e. getFactory()).
 The client calls the template method instead, which uses the factory method to
 create and use a product.
 
+```cpp
+// Note: Declarations and definitions typically separated in actual code
+
+class AbstractProduct
+{
+ public:
+  virtual ~AbstractProduct() {}
+  virtual void doStuff() const = 0;  // Template method (one per operation)
+};
+
+class AbstractFactory
+{
+ public:
+  virtual ~AbstractFactory() {}
+  void doStuff()  // Template method uses hidden factory method to produce and use product
+  {
+    AbstractProduct* product = createProduct();
+    product->doStuff();
+  }
+ protected:
+  virtual AbstractProduct* createProduct() const = 0;  // Factory method
+};
+
+class ConcreteFactory1 : public AbstractFactory  // Similar for ConcreteFactoryN
+{
+ public:
+  virtual ~ConcreteFactory1() {}
+  virtual ConcreteProduct1* createProduct() const { return new ConcreteProduct1(); }
+};
+
+class ConcreteProduct1 : public AbstractProduct  // Similar for ConcreteProductN
+{
+ public:
+  virtual ~ConcreteProduct1() {}
+  virtual void doStuff() { ... };
+};
+
+int main()
+{
+  AbstractProduct* p1 = new ConcreteProduct1();
+  p1->doStuff();
+  delete p1;
+  
+  AbstractProduct p2 = ConcreteProduct2();
+  p2.doStuff();
+}
+```
+
 Typically, you need at most one instance per concrete factory in your
 application, so concrete factories are often implemented as singletons.
 
