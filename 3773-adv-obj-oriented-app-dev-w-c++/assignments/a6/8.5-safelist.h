@@ -14,7 +14,7 @@
  *
  * Ideas for improvements:
  * - composition instead of inheritance (but exercise requires inheritance)
- * - adapter design pattern for more decoupling (but more overhead)
+ * - adapter design pattern for more decoupling (but more overhead, and should be used when interfaces incompatible)
  * - use more specific exceptions (maybe even custom exceptions)
  *
  * AFAIK, if I override one variation of an overloaded operation, I need to
@@ -48,8 +48,7 @@ class SafeList : public list<T>
   {
     if (this->empty())
       throw domain_error("Cannot access first element when container is empty");
-    else
-      return list<T>::front();
+    return list<T>::front();
   }
 
   // Returns a const reference to the first element if container is not empty.
@@ -57,8 +56,7 @@ class SafeList : public list<T>
   {
     if (this->empty())
       throw domain_error("Cannot access first element when container is empty");
-    else
-      return list<T>::front();
+    return list<T>::front();
   }
 
   // Returns a reference to the last element if container is not empty.
@@ -66,8 +64,7 @@ class SafeList : public list<T>
   {
     if (this->empty())
       throw domain_error("Cannot access last element when container is empty");
-    else
-      return list<T>::back();
+    return list<T>::back();
   }
 
   // Returns a const reference to the last element if container is not empty.
@@ -75,8 +72,7 @@ class SafeList : public list<T>
   {
     if (this->empty())
       throw domain_error("Cannot access last element when container is empty");
-    else
-      return list<T>::back();
+    return list<T>::back();
   }
 
   // Assigns n new elements of value val to the container.
