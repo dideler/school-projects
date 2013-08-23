@@ -45,11 +45,19 @@ The client would create a factory object and use its factory method to create
 various kinds of products. This avoids hard-coding concrete product names. E.g.
 
 ```cpp
-// User of pattern never creates objects directly, instead gets a factory to
-// create concrete products. String determines which concrete factory to use.
-AbstractFactory* factory = AbstractFactory::getFactory(string); // instantiating operation: returns a concrete factory
-AbstractProduct* product = factory->createProduct(string); // factory method: returns a concrete product
+// User of pattern never creates objects directly, use factory to create products.
+
+// String determines which concrete factory to use.
+AbstractFactory* factory = AbstractFactory::getFactory(string); // Instantiating operation: returns a concrete factory
+AbstractProduct* product = factory->createProduct(string); // Factory method: returns a concrete product
 product->doSomething();
+...
+
+// OR, don't use an instantiating operation, and don't use strings to choose a product.
+AbstractFactory* factory = new ConcreteFactory();
+AbstractProduct* product = factory->createProductA();
+product->doSomething();
+...
 ```
 ![](http://i.imgur.com/0jcpdt9.png)
 _(Alternative implementation)_
