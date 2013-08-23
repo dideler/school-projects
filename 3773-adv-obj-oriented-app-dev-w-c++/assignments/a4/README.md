@@ -134,6 +134,8 @@ The new interface and the adapter class should use the same namespace.
   </dd>
 </dl>
 
+![](http://i.imgur.com/uCxgtD8.png)
+
 **Note:** Structural design patterns (e.g. bridge and adapter patterns) describe
 how to compose existing objects and classes to form new structures.
 
