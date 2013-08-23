@@ -120,7 +120,7 @@ The new interface and the adapter class should use the same namespace.
     The adapter class uses multiple inheritance: it inherits the new interface
     and the implementation of the old interface (via private inheritance).
 
-    Implementations of the old interface are used by refering the base class,
+    Operations from the old interface are used by referring to the base class,
     e.g. `namespace::OldClass::operation();`
   </dd>
   <dt>Object adapter</dt>
