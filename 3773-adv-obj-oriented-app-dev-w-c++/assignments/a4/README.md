@@ -117,7 +117,7 @@ The new interface and the adapter class should use the same namespace.
 <dl>
   <dt>Class adapter</dt>
   <dd>
-    The adapter class uses multiple inheritance: it inherits the new interface
+    The adapter mixin class uses multiple inheritance: it inherits the new interface
     and the implementation of the old interface (via private inheritance).
 
     Operations from the old interface are used by referring to the base class,
@@ -125,7 +125,7 @@ The new interface and the adapter class should use the same namespace.
   </dd>
   <dt>Object adapter</dt>
   <dd>
-    The adapter class only inherits the new interface and uses object
+    The adapter mixin class only inherits the new interface and uses object
     composition. It contains a private encapsulated member of the old class type
     (e.g. often called <code>adaptee_</code>). If <code>adaptee_</code> needs some
     special initialization, the constructor can take in (a pointer to) an instance
@@ -136,7 +136,7 @@ The new interface and the adapter class should use the same namespace.
   </dd>
 </dl>
 
-![](http://i.imgur.com/uCxgtD8.png)
+![](http://i.imgur.com/uCxgtD8.png) _(Alternatively, the client only includes the concrete adapter class.)_
 
 **Note:** Structural design patterns (e.g. bridge and adapter patterns) describe
 how to compose existing objects and classes to form new structures.
