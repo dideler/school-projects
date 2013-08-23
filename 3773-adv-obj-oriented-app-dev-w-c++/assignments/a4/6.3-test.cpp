@@ -4,6 +4,14 @@
  *
  * Sample main program.
  * Based on example 6.1.
+ *
+ * If you pay close attention, you'll realize that this program is full of shit
+ * as it actually doesn't use the abstract factory pattern at all. In this case
+ * I blame the textbook, which said to base the program off a similar example.
+ * On a scale of "big ball of nothing" to "this course changed my life", that
+ * example is a "let's write example code for the theory I wrote months ago,
+ * and I only have a week until the book ships". So I present to you this
+ * steaming pile of shit, enjoy.
  * 
  * @author Dennis Ideler <ideler.dennis@gmail.com>
  * @student# 100122809
@@ -49,6 +57,6 @@ int main(int argc, char* argv[])
   cout << "Decrypted " << argv[2] << " using algorithm 2" << endl;
   cout << ANSI_RESET;
   delete e2;
-
+   
   return 0;
 }
