@@ -1,3 +1,6 @@
+// This version is not the same word-for-word as the code in the textbook.
+// That's because the version in the textbook does not compile and is unreadable.
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -5,7 +8,7 @@ using namespace std;
 class X
 {
  public: 
-  virtual void show(string s="") const { cout << "X::show(); " << s << " " << i_ << endl; }
+  virtual void show(string s="") const { if (s != "") cout << "X::show(); " << s << " " << i_ << endl; }
   X(int i) : i_(i) { show(); }
   virtual ~X() { cout << "~X" << endl; }
  private:
