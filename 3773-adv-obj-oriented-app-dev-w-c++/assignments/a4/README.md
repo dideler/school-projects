@@ -42,7 +42,9 @@ Your code should have at least two classes when using this pattern:
 (1) a factory class (which may be abstract), and (2) an abstract product class
 (which is the base class for all products).
 The client would create a factory object and use its factory method to create
-various kinds of products. This avoids hard-coding concrete product names. E.g.
+various kinds of products. This avoids hard-coding class names.
+Because the client doesn't use any concrete classes, it's possible to modify the factory's behaviour
+(by deriving a new concrete factory) without modifying the client's code! E.g.
 
 ```cpp
 // User of pattern never creates objects directly, use factory to create products.
