@@ -49,14 +49,14 @@ Because the client doesn't use any concrete classes, it's possible to modify the
 ```cpp
 // User of pattern never creates objects directly, use factory to create products.
 
-// String determines which concrete factory to use.
+// String (or enum) determines which concrete factory and product to return.
 AbstractFactory* factory = AbstractFactory::getFactory(string); // Instantiating operation: returns a concrete factory
 AbstractProduct* product = factory->createProduct(string); // Factory method: returns a concrete product
 product->doSomething();
 ...
 
-// OR, don't use an instantiating operation, and don't use strings to choose a product.
-AbstractFactory* factory = new ConcreteFactory();
+// OR, without using an instantiating operation and strings.
+AbstractFactory* factory = new ConcreteFactory(); // Less desired, because hardcoding a class name.
 AbstractProduct* product = factory->createProductA();
 product->doSomething();
 ...
