@@ -54,60 +54,12 @@ product->doSomething();
 ![](http://i.imgur.com/0jcpdt9.png)
 _(Alternative implementation)_
 
-The factory method is often useful in combination with the template method
-pattern (which defines an algorithm in terms of abstract operations). If using a
-template method, the factory method should be hidden from the client (i.e.
-private) and there shouldn't be an instantiating operation (i.e. getFactory()).
-The client calls the template method instead, which uses the factory method to
-create and use a product.
-
-```cpp
-// Note: Declarations and definitions typically separated in actual code
-
-class AbstractProduct
-{
- public:
-  virtual ~AbstractProduct() {}
-  virtual void doStuff() const = 0;  // Template method (one per operation)
-};
-
-class AbstractFactory
-{
- public:
-  virtual ~AbstractFactory() {}
-  void doStuff()  // Template method uses hidden factory method to produce and use product
-  {
-    AbstractProduct* product = createProduct();
-    product->doStuff();
-  }
- protected:
-  virtual AbstractProduct* createProduct() const = 0;  // Factory method
-};
-
-class ConcreteFactory1 : public AbstractFactory  // Similar for ConcreteFactoryN
-{
- public:
-  virtual ~ConcreteFactory1() {}
-  virtual ConcreteProduct1* createProduct() const { return new ConcreteProduct1(); }
-};
-
-class ConcreteProduct1 : public AbstractProduct  // Similar for ConcreteProductN
-{
- public:
-  virtual ~ConcreteProduct1() {}
-  virtual void doStuff() { ... };
-};
-
-int main()
-{
-  AbstractProduct* p1 = new ConcreteProduct1();
-  p1->doStuff();
-  delete p1;
-  
-  AbstractProduct p2 = ConcreteProduct2();
-  p2.doStuff();
-}
-```
+The factory method can be used in combination with the template method
+pattern (which defers some steps of an algorithm to subclasses by defining them as abstract
+operations in the superclass). The client calls the template method which calls a factory method
+which returns a product that the template method uses.
+Therefore the factory method should be hidden from the client (e.g. protected)
+and there shouldn't be an instantiating operation (e.g. `getFactory()`).
 
 Typically, you need at most one instance per concrete factory in your
 application, so concrete factories are often implemented as singletons.
