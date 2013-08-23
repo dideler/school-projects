@@ -126,12 +126,12 @@ The new interface and the adapter class should use the same namespace.
   <dt>Object adapter</dt>
   <dd>
     The adapter class only inherits the new interface and uses object
-    composition. It contains a private encapsulated member (e.g. a pointer to
-    the old class and is often called <code>adaptee_</code>). The constructor takes in (a
-    pointer to) an instance of the old class and uses it to initialize the class
-    member.
+    composition. It contains a private encapsulated member of the old class type
+    (e.g. often called <code>adaptee_</code>). If <code>adaptee_</code> needs some
+    special initialization, the constructor can take in (a pointer to) an instance
+    of the old class and uses it to initialize the class member.
 
-    Implementations of the old interface are used by having the composited
+    Operations of the old interface are used by having the composited
     object (e.g. "adaptee") call the operations.
   </dd>
 </dl>
