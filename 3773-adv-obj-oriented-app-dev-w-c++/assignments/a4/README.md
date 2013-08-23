@@ -53,13 +53,13 @@ Because the client doesn't use any concrete classes, it's possible to modify the
 AbstractFactory* factory = AbstractFactory::getFactory(string); // Instantiating operation: returns a concrete factory
 AbstractProduct* product = factory->createProduct(string); // Factory method: returns a concrete product
 product->doSomething();
-...
+delete product;
 
 // OR, without using an instantiating operation and strings.
-AbstractFactory* factory = new ConcreteFactory(); // Less desired, because hardcoding a class name.
-AbstractProduct* product = factory->createProductA();
-product->doSomething();
-...
+factory = new ConcreteFactory(); // Less desired, because hardcoding a class name.
+factory->createProductA()->doSomething(); // Notice we skip assigning to a product.
+delete factory->createProductA();
+delete factory;
 ```
 ![](http://i.imgur.com/0jcpdt9.png)
 _(Alternative implementation)_
