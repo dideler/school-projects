@@ -121,13 +121,13 @@ The new interface and the adapter class should use the same namespace.
     and the implementation of the old interface (via private inheritance).
 
     Operations from the old interface are used by referring to the base class,
-    e.g. `namespace::OldClass::operation();`
+    e.g. <code>namespace::OldClass::operation();</code>
   </dd>
   <dt>Object adapter</dt>
   <dd>
     The adapter class only inherits the new interface and uses object
     composition. It contains a private encapsulated member (e.g. a pointer to
-    the old class and is often called `adaptee_`). The constructor takes in (a
+    the old class and is often called <code>adaptee_</code>). The constructor takes in (a
     pointer to) an instance of the old class and uses it to initialize the class
     member.
 
