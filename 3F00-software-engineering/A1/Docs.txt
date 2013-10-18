@@ -1,0 +1,19 @@
+Program written, compiled and tested on Linux (Kubuntu and CentOS).
+
+To compile:
+On a Linux environment (such as CentOS in the labs)...
+1) open up the terminal (applications > accessories > terminal)
+2) go to the directory in which the assignment is in (cd command changes directory)
+3) run the compile script; type (without the quotation marks) "sh ./compileList.sh"
+4) to run the executable, type (without the quatation marks) "./test"
+5) optional step: to run in gdb (debugger), type "gdb test"
+
+Functions:
+1. deleteCurrent: the deletion of the current element (which should raise an error if the list is empty)
+2. getCurrent: inspection of the contents of the current element (again, an error condition is possible here)
+3. nextNode: making the next element current
+4. prevNode: making the previous element current
+5. insertBefore: insertion of a new element before current
+6. insertAfter: insertion of a new element after current
+7. isListEmpty: test if the list is empty
+8. getSize: returns size of list

@@ -1,0 +1,15 @@
+A     B     C
+|     |     |
+|     |     |
+*     *     *
+   D     E
+   |     |
+   |     |
+   *     o
+F     G     H
+o     |     |
+o     o     *
+o     o     *
+
+* = Red
+o = White
