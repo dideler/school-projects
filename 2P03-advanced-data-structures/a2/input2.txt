@@ -1,0 +1,6 @@
+380,130,510,100,120,400,840,250,890,370,660,950
+
+aslkdj,3#!@3,777,000123, 9870,!!-111
+312,171,202,12,012,1a3,99,1000,999,1111,100,abcd,,123
+
+move additional 3 test cases (blank line included) back to input.txt when finished

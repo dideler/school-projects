@@ -1,0 +1,6 @@
+insert 10
+insert 20
+search 30
+insert 15
+search 15
+quit
