@@ -1,0 +1,57 @@
+-- Q1
+select isbn as ans1_isbn, sum(qty) as ans1_sum
+from orderlist
+where ship_date is null
+group by isbn;
+
+-- Q2
+select c.name as ans2_cname
+from customer c
+where c.cid in (
+  (select o.cid
+  from orders o, orderlist ol, book b
+  where o.ordernum = ol.ordernum and ol.isbn = b.isbn
+  and b.title like 'Database Management Systems')
+  intersect
+  (select o2.cid
+  from orders o2, orderlist ol2, book b2
+  where o2.ordernum = ol2.ordernum and ol2.isbn = b2.isbn
+  and b2.title like 'Operating Systems: Internals and Design Principles')
+);
+
+-- Q3
+select o.cid as ans3_cid
+from orders o
+where not exists (
+  select *
+  from book b
+  where b.author like 'Robert Jordan'
+  and not exists (
+    select *
+    from orders o2, orderlist ol2
+    where o2.ordernum = ol2.ordernum and o2.cid = o.cid and ol2.isbn = b.isbn
+  )
+);
+
+-- Q4
+create or replace view exclude_most_expensive_book as (
+  select *
+  from book b
+  where not b.price = ( select max(b2.price) from book b2)
+);
+
+select isbn as ans4_isbn, title, author
+from exclude_most_expensive_book e1
+where e1.price = (select max(price) from exclude_most_expensive_book);
+
+-- Q5
+create or replace view order_total as (
+  select ol.ordernum, sum(ol.qty) as totalqty, sum(ol.qty * b.price) as totalcost
+  from orderlist ol, book b
+  where ol.isbn = b.isbn
+  group by ol.ordernum
+);
+
+select ordernum as ans5_ordernum, totalcost / totalqty as ans5_avg_cost
+from order_total;
+

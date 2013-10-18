@@ -1,0 +1,75 @@
+---------------------------------------------
+---      Legend and Design Notes     ----
+---------------------------------------------
+
+--- AccOwn ---
+AccOwn 	- Account Owners
+DLNum  	- Driver's License Number
+CCNum  	- Credit Card Number
+CCType  	- Credit Card Type
+CCID	- Credit Card ID
+CCName 	- Name on Credit Card
+AccID 	- Account ID
+Addr 	-  Address
+
+--- RentsThru ---
+RentsThru   - Rents Through
+
+--- HouseMem ---
+HouseMem   - Household Members
+DOB 	     - Date Of Birth
+MinAccID 	     - Minor Account ID
+
+--- Transaction ---
+DOT 	- Date of Transaction
+TID 	- Transaction ID
+
+--- Auth_By ---
+Auth_By 	- Authorized By
+
+--- Employees ---
+DOE 	- Date of Employment
+EmpID 	- Employee ID
+SIN 	- Social Insurance Number
+Addr 	- Address
+DOB 	- Date of Birth
+
+--- Rental ---
+DOR 	- Date of Return
+POR	- Price of Rental
+Due 	- Due Date
+
+--- PVPurchase ---
+PVPurchase   - Previously Viewed Purchase
+
+--- NMPurchase ---
+NMPurchase   - New Movie Purchase
+POS	        - Price of Sale
+Qty	        - Number of copies of a single new movie sold in a given transaction
+
+--- RMCopies ---
+RMCopies   - Rental Movie Copies
+RMCID 	  - Rental Movie Copy ID
+POS 	  - Price of Sale
+
+	IsForSale	IsAvailable	Meaning
+	-----------	--------------	-----------
+	        0	        0		The video copy is for rent and is currently rented
+	        0	        1		The video Copy is for rent and is currently available in store.
+	        1	        0		The video Copy is for sale
+	        1	        1		The video copy is for sale and is currently available in store.
+
+Trigger notes: 	
+	- Before Inserting a row, if the row already exists increase the quantity in the existant row 
+	   by the quantity in the row being inserted.
+	- After Updating a row, if the quantity is 0 or less the row should be deleted.
+
+--- RMInfo ---
+RMInfo	 - Rental Movie info
+
+--- MovieInfo ---
+PVPM	- Previously Viewed Price Modifier
+NMQty 	- New Movie Quantity
+
+--- Category ---
+RPrice 	- Rental Price
