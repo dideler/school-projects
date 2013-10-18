@@ -1,10 +1,10 @@
-school-projects
+School Projects
 ===============
 
-A collection of school work from my days of studying computer science.
+A collection of school work from my days of studying computer science at
+university.
 
-Be warned, code may be messy or incomplete.
+Here be dragons
+---------------
 
-TODO
-----
-Still need to add most of my school work. Perhaps on a nice rainy sunday...
+Be warned. Code may be messy, incomplete, or buggy.
