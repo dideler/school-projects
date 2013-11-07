@@ -9,13 +9,11 @@ Here be dragons
 
 Be warned. Code may be messy, incomplete, buggy, or wrong.
 
-This repository serves as a useful reminder about how far I've come.
-I remember switching labs for my intro to programming course because the lab
-leader laughed at me when I asked a noob question. Well, I'm glad I didn't drop out.
+This repository serves as a useful reminder for how far I've come
+since my first day at university when I knew practically nothing.
 
 I may cringe looking back at my old work, but that's a good thing. If there's
-ever a time when I don't cringe looking at my old work, that means I've stopped
-improving.
+ever a time when I don't, that means I've stopped improving.
 
 Other school work
 -----------------
