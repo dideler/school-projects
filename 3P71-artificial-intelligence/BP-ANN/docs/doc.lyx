@@ -1,0 +1,1159 @@
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+A Feed-Forward Neural Net for Parity Checking
+\end_layout
+
+\begin_layout Author
+Dennis Ideler
+\end_layout
+
+\begin_layout Date
+December 4th, 2009
+\end_layout
+
+\begin_layout Standard
+Computer Science Department, Brock University
+\end_layout
+
+\begin_layout Standard
+COSC 3P71: Introduction to Artificial Intelligence
+\end_layout
+
+\begin_layout Standard
+di07ty@brocku.ca, 4134466
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Neural networks are not a new concept; research on them has been going on
+ for some time.
+ For instance, the McCulloch and Pitts neural model dates back to the early
+ 1940s and the perceptron
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A single layer feed-forward neural network invented by 
+\noun on
+Frank Rosenblatt
+\noun default
+.
+\end_layout
+
+\end_inset
+
+ was built back in the late 1950s.
+ Unfortunately, interest declined from the late 1960s until the 1980s, due
+ to proofs and demonstrations of the perceptron's limitations and computational
+ weakness.
+ Fortunately for the sake of science, interest was raised again
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+See section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Error-Backpropagation"
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+to find out why.
+\end_layout
+
+\end_inset
+
+ and research in this field continues at a healthy pace.
+ Nowadays neural networks have many uses and are used in many fields, such
+ as physics, psychology, statistics, engineering, econometrics, and computer
+ science to name a few.
+\end_layout
+
+\begin_layout Standard
+The rest of the introduction includes a basic intro to the learning system
+ used and the problem at hand.
+ If you already have a decent understanding of both, you can skip the introducti
+on.
+\end_layout
+
+\begin_layout Subsection
+Artificial Neural Networks
+\end_layout
+
+\begin_layout Subsubsection
+What Are Artificial Neural Networks?
+\end_layout
+
+\begin_layout Standard
+Artificial neural networks (ANN), or simply neural networks (NN), are adaptive
+ statistical models based on an analogy with the structure of the brain
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Biological Neural Nets (BNN) are the natural 
+\begin_inset Quotes eld
+\end_inset
+
+equivalent
+\begin_inset Quotes erd
+\end_inset
+
+ of the ANN.
+\end_layout
+
+\end_inset
+
+.
+ Artificial neural networks are basically built from simple units called
+ 
+\emph on
+(artificial) neurons
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Also called 
+\emph on
+nodes
+\emph default
+, 
+\emph on
+neurodes
+\emph default
+, 
+\emph on
+processing elements
+\emph default
+ 
+\emph on
+(PEs)
+\emph default
+,
+\emph on
+ units
+\emph default
+, among many others.
+\end_layout
+
+\end_inset
+
+
+\emph default
+.
+ These units are interlinked by a set of weighted connections.
+ Learning is usually accomplished by adjusting the weights.
+ The units are organized into layers.
+ A network will usually have several layers, where the first layer is called
+ the 
+\emph on
+input
+\emph default
+ layer, and the last one is called the 
+\emph on
+output
+\emph default
+ layer.
+ Any intermediate layers are called 
+\emph on
+hidden
+\emph default
+ layers (see Fig.
+ 1).
+ The information to be analyzed is fed to the first layer and then proceeds
+ to the next layer until the last layer.
+ The goal of the network is to learn some association between input and
+ output patterns.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 400px-Artificial_neural_network.svg.png
+	display false
+	scale 35
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Example of an ANN with one hidden layer.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+The Artificial Neuron
+\end_layout
+
+\begin_layout Standard
+McCulloch and Pitts (1943) introduced the basic model of a neuron.
+ The neuron basically receives one or more inputs (which are usually weighted)
+ and sums them to produce an output.
+ The sum is then passed through a non-linear transfer function (also known
+ as an activation function).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Neuron.JPG
+	display false
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+A biological and mathematical model of a neuron.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Feed-Forward Neural Networks
+\end_layout
+
+\begin_layout Standard
+Feed-forward networks are the most basic form of ANN.
+ A feed-forward network only contains forward paths
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Data only flows in one direction; there are no cycles.
+\end_layout
+
+\end_inset
+
+.
+ A feed-forward network can be either single-layer (no hidden layers), or
+ multi-layer (there exists at least one hidden layer).
+ This project consists of a multi-layer feed-forward network.
+\end_layout
+
+\begin_layout Subsubsection
+Error-Correction Learning
+\end_layout
+
+\begin_layout Standard
+Error-correction learning is used with supervised learning systems.
+ It is the technique of comparing the actual output to the desired or expected
+ output, and using that error to train ANNs by adjusting the weights with
+ help of the error values.
+ Error-correction learning attempts to minimize this error signal with each
+ training iteration.
+ The most popular learning algorithm (and the one used in this project)
+ is the backpropagation algorithm (see section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Error-Backpropagation"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Error Backpropagation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Error-Backpropagation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The main problem with early neural nets was that they could only deal with
+ linear problems.
+ Researchers knew however that they could overcome this limitation by adding
+ one or more hidden layers.
+ The problem was that there was no way to automatically adjust the weights
+ in the hidden layer in case of errors; there was no learning algorithm.
+ This caused the decline in interest in neural nets.
+ The revival was due to error backpropagation
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Backpropagation was around since the 1950s but only gained acceptance in
+ the mid 1980s
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In short, backpropagation networks consist of:
+\end_layout
+
+\begin_layout Enumerate
+multiple layers of non-linear units
+\end_layout
+
+\begin_layout Enumerate
+computation of an error signal
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A backpropagation network uses supervised learning to calculate the difference
+ between the output and expected output.
+\end_layout
+
+\end_inset
+
+ using the rate of change
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+That is the derivative.
+\end_layout
+
+\end_inset
+
+ of the non-linear function
+\end_layout
+
+\begin_layout Enumerate
+backpropagation of an error signal
+\end_layout
+
+\begin_layout Enumerate
+estimation of an error signal by the hidden units
+\end_layout
+
+\begin_layout Standard
+Just like a linear unit, the non-linear unit computes its activation by
+ summing all the weighted activations it receives.
+ However, unlike the linear unit, it will create a response by putting this
+ sum through a non-linear transfer function (also known as a sigmoid function
+ or activation function) which is mentioned in step 2 above.
+ If threshold is used, then the threshold value is added to the sum before
+ going through the transfer function.
+ Several transfer functions exist.
+ For an output range of [0, 1], the 
+\emph on
+logistic function
+\emph default
+ is used: 
+\begin_inset Formula $f(x)=logist(x)=\frac{1}{1+e^{-x}}$
+\end_inset
+
+ This is also the function used in this project.
+\end_layout
+
+\begin_layout Standard
+The algorithm for backpropagation can be broken down into the following
+ high-level steps:
+\end_layout
+
+\begin_layout Enumerate
+Initialize the network with small random weights
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note that if 
+\size normal
+\emph on
+\color none
+all
+\emph default
+ the weights are zero, then the error term is zero and that means no learning
+ because the correction of the weights will then be equal to 0.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Present an input pattern to the input layer
+\end_layout
+
+\begin_layout Enumerate
+Feed the input pattern forward through the network to calculate its activation
+ value (i.e.
+ generate a forward flow of activation)
+\end_layout
+
+\begin_layout Enumerate
+Take the difference between desired output and the activation value to calculate
+ the network's activation error (i.e.
+ compute the error term)
+\end_layout
+
+\begin_layout Enumerate
+Adjust the weights feeding the output neuron to reduce its activation error
+ for this input pattern
+\end_layout
+
+\begin_layout Enumerate
+Propagate an error value back to each hidden neuron that is proportional
+ to their contribution of the network's activation error
+\end_layout
+
+\begin_layout Enumerate
+Adjust the weights feeding each hidden neuron to reduce their contribution
+ of error for this input pattern
+\end_layout
+
+\begin_layout Enumerate
+Repeat steps 2 to 7 for each input pattern in the input collection
+\end_layout
+
+\begin_layout Enumerate
+Repeat step 8 until desired epochs reached or until the network is trained
+ to satisfaction
+\end_layout
+
+\begin_layout Subsection
+Parity Checking
+\end_layout
+
+\begin_layout Standard
+Parity checking is a simple form of error detection.
+ A parity bit is an extra bit that is added to a given set of bits.
+ There are two varients of parity bits: odd parity & even parity.
+ In odd parity, if the number of ones in a given set of bits is 
+\emph on
+even
+\emph default
+, the parity bit is set to 1, which results in the total amount of ones
+ in the bit data set being 
+\emph on
+odd
+\emph default
+.
+ In even parity, if the number of ones in a given set of bits is 
+\emph on
+odd
+\emph default
+, the parity bit is set to 1, which results in the total amount of ones
+ in the bit data set being 
+\emph on
+even
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The standard in computer memory is odd parity, however, this project focuses
+ on an even parity bit.
+\end_layout
+
+\begin_layout Section
+Network Parameters
+\end_layout
+
+\begin_layout Standard
+Parameter values play a big role in the success of an ANN, and there are
+ many different parameters that must be decided on when designing a neural
+ network.
+ These parameters include (but not limited to):
+\end_layout
+
+\begin_layout Itemize
+the number of layers
+\end_layout
+
+\begin_layout Itemize
+the number of neurons per layer
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+That is, in the input layer, hidden layer(s) if any, and the output layer.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+the number of training iterations
+\end_layout
+
+\begin_layout Itemize
+the learning rate
+\end_layout
+
+\begin_layout Itemize
+the momentum
+\end_layout
+
+\begin_layout Subsection
+Number of Hidden Layers
+\end_layout
+
+\begin_layout Standard
+For most non-linear problems, selecting one hidden layer is sufficient.
+ It is said that two hidden layers are required for modeling data with discontin
+uities and that there is no theoretical reason to use more than two hidden
+ layers
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+.
+ Adding a hidden layer enlarges the space of hypotheses that the network
+ can represent.
+\end_layout
+
+\begin_layout Subsection
+Number of Neurons per Layer
+\end_layout
+
+\begin_layout Standard
+The number of units in the input layer should be adequate to the number
+ of variables of which a pattern consists of.
+ This is because each variable is presented to an input unit.
+\end_layout
+
+\begin_layout Standard
+The number of hidden units represent the number of representations the network
+ can map for every stimuli's input and output pattern association.
+ If too few hidden units are used, the network will be unable to model (complex)
+ data completely, resulting in poor results.
+ If too many hidden units are used, the training time will become very long
+ and the network may 
+\emph on
+overfit
+\emph default
+ the data.
+ This is when the network performs really well on trained data, but very
+ poorly on unseen data (i.e.
+ testing data).
+\end_layout
+
+\begin_layout Standard
+The number of output units depends on the classification that the problem
+ outputs.
+ For boolean classification, a neural net will usually have a single output
+ unit, where a result over 0.5 is one classification, and a result below
+ 0.5 is another.
+ A neural net can also have 
+\emph on
+k
+\emph default
+-way classification (thus 
+\emph on
+k
+\emph default
+ classes).
+ This can be done in two ways: one is to divide a single output unit into
+ 
+\emph on
+k
+\emph default
+ portions; the other way is to have 
+\emph on
+k
+\emph default
+ output units, each representing a different classification.
+\end_layout
+
+\begin_layout Subsection
+Number of Iterations & Epochs
+\end_layout
+
+\begin_layout Standard
+(This subsection isn't finished yet)
+\end_layout
+
+\begin_layout Subsection
+Learning Rate & Momentum
+\end_layout
+
+\begin_layout Standard
+Learning rate is the scaling factor for which all weight adjustments are
+ made.
+ Momentum ensures a higher probability that a consequent weight adjustment
+ will be in the same direction.
+\end_layout
+
+\begin_layout Section
+Training
+\end_layout
+
+\begin_layout Subsection
+Types of Training
+\end_layout
+
+\begin_layout Standard
+Training configures the neural network to produce a desired set of outputs
+ given a set of inputs.
+ There exist several learning methods to train a neural net:
+\end_layout
+
+\begin_layout Description
+Supervised
+\begin_inset space ~
+\end_inset
+
+learning the system is provided with matching outputs for the inputs
+\end_layout
+
+\begin_layout Description
+Unsupervised
+\begin_inset space ~
+\end_inset
+
+learning the system develops its own representation of the input stimuli
+\end_layout
+
+\begin_layout Description
+Reinforcement
+\begin_inset space ~
+\end_inset
+
+learning the system learns by feedback (e.g.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+bad
+\begin_inset Quotes erd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+The set of patterns to be learned is presented to the input units (usually
+ in random order) and each pattern is learned in turn.
+ Learning one pattern is called an 
+\emph on
+iteration
+\emph default
+; learning the full set of patterns is called an 
+\emph on
+epoch
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+A Numerical Example
+\end_layout
+
+\begin_layout Standard
+The network in this problem implements a 4-bit system, checking for even
+ parity (see table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Sample-of-training"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+input pattern
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+expected output
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1111
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sample of training data for 4-bit parity checking.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sample-of-training"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+To make the example easy to follow, figures of the network have been included.
+ A three-layer network, made up of a
+\begin_inset Formula $_{\text{k}}$
+\end_inset
+
+= 4 input units, a
+\begin_inset Formula $_{\text{j}}$
+\end_inset
+
+= 4 hidden units, and a
+\begin_inset Formula $_{\text{i}}$
+\end_inset
+
+= 1 output unit (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Network-architecture"
+
+\end_inset
+
+) will be trained to associate the stimulus 
+\series bold
+x
+\series default
+ = [0 0 0 1] to the response 
+\series bold
+t
+\series default
+ = [1].
+ To keep the example simple, no threshold is used.
+ [this section isn't finished yet!]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename 4-4-1-ANN(v2).jpeg
+	display false
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Network architecture used for this problem (supervisor not visible).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Network-architecture"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Testing
+\end_layout
+
+\begin_layout Standard
+[section not finished]
+\end_layout
+
+\begin_layout Section
+Stuff from board -- need to incorporate later
+\end_layout
+
+\begin_layout Enumerate
+Each unit first computes a weighted sum of its inputs 
+\begin_inset Formula $in_{i}=\sum_{j-0}^{n}w_{j,i}*a_{j}$
+\end_inset
+
+ if threshold is used then 
+\begin_inset Formula $in_{i}=\sum_{j-0}^{n}w_{j,i}*a_{j}+threshold$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Then it applies an activation function 
+\emph on
+g
+\emph default
+ to this sum to derive the output 
+\begin_inset Formula $a_{i}=g(in_{i})=g(\sum_{j-0}^{n}w_{j,i}*a_{j})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+g
+\emph default
+ is the sigmoid function, which in this case is the logistic function 
+\begin_inset Formula $f(x)=\frac{1}{(1+e^{-x})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then for a 4-4-1 feedforward net:
+\end_layout
+
+\begin_layout Enumerate
+Given an input vector 
+\begin_inset Formula $x=(x_{1},x_{2},x_{3},x_{4})$
+\end_inset
+
+, the activations of the input units are set to 
+\begin_inset Formula $(a_{1},a_{2},a_{3},a_{4})=(x_{1},x_{2},x_{3},x_{4})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The output unit 
+\emph on
+a
+\begin_inset Formula $_{\text{9}}$
+\end_inset
+
+
+\emph default
+ (in the output layer 
+\emph on
+Fc
+\emph default
+) will have the activation 
+\begin_inset Formula $a_{9}=g(w_{5,9}a_{5}+w_{6,9}a_{6}+w_{7,9}a_{7}+w_{8,9}a_{8})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Rewrite the function to express the output of each hidden unit as a function
+ of its inputs (i.e.
+ show the output of the network as a whole) 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $a_{9}=g(w_{5,9}g(w_{1,5}a_{1}+w_{2,5}a_{2}+w_{3,5}a_{3}+w_{4,5}a_{4})+w_{6,9}g(w_{1,6}a_{1}+w_{2,6}a_{2}+w_{3,6}a_{3}+w_{4,6}a_{4})$
+\end_inset
+
+
+\begin_inset Formula $+w_{7,9}g(w_{1,7}a_{1}+w_{2,7}a_{2}+w_{3,7}a_{3}+w_{4,7}a_{4})+w_{8,9}g(w_{1,8}a_{1}+w_{2,8}a_{2}+w_{3,8}a_{3}+w_{4,8}a_{4}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Because there is a single output unit, the result will go through boolean
+ classification.
+ If the value is greater than 0.5, then the parity bit is 1, otherwise the
+ parity bit is 0.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+[section not finished, but basically, parity bit is a bad problem for NNs
+ because NNs are good for recognizing patterns but a small change in bit
+ data results in a completely different parity bit]
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+http://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Artificial_neural_network.
+svg/400px-Artificial_neural_network.svg.png
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+http://www.bordalierinstitute.com/images/Neuron.JPG
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "DTREG"
+key "key-3"
+
+\end_inset
+
+http://www.dtreg.com/mlfn.htm
+\end_layout
+
+\end_body
+\end_document

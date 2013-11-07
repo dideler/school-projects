@@ -1,0 +1,1 @@
+./ANN < Patterns.dat 
