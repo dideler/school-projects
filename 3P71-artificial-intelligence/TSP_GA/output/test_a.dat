@@ -1,0 +1,1062 @@
+
+This program is an implementation of a Genetic Algorithm (GA) system for the Traveling Salesman Problem (TSP).
+
+Population Size = 500
+Maximum Generations = 250
+Crossover Rate = 1.00000
+Mutation Rate = 0.00000
+Number of Elites = 1
+Tournament Selection k = 4
+
+Fitness of best initial solution: 117496
+Average fitness of initial population: 154611
+
+Generation 1
+Best fitness: 116841
+Average fitness: 146348
+
+Generation 2
+Best fitness: 110413
+Average fitness: 141145
+
+Generation 3
+Best fitness: 109750
+Average fitness: 137642
+
+Generation 4
+Best fitness: 108782
+Average fitness: 134620
+
+Generation 5
+Best fitness: 104746
+Average fitness: 131798
+
+Generation 6
+Best fitness: 104746
+Average fitness: 129584
+
+Generation 7
+Best fitness: 104192
+Average fitness: 127262
+
+Generation 8
+Best fitness: 100475
+Average fitness: 126184
+
+Generation 9
+Best fitness: 100417
+Average fitness: 126007
+
+Generation 10
+Best fitness: 96684.1
+Average fitness: 124973
+
+Generation 11
+Best fitness: 94255.1
+Average fitness: 122774
+
+Generation 12
+Best fitness: 94255.1
+Average fitness: 122837
+
+Generation 13
+Best fitness: 90411
+Average fitness: 121592
+
+Generation 14
+Best fitness: 90411
+Average fitness: 119381
+
+Generation 15
+Best fitness: 89055
+Average fitness: 117169
+
+Generation 16
+Best fitness: 89055
+Average fitness: 115009
+
+Generation 17
+Best fitness: 85255.9
+Average fitness: 111756
+
+Generation 18
+Best fitness: 83040.1
+Average fitness: 110115
+
+Generation 19
+Best fitness: 83040.1
+Average fitness: 107934
+
+Generation 20
+Best fitness: 81700.3
+Average fitness: 105159
+
+Generation 21
+Best fitness: 81700.3
+Average fitness: 102623
+
+Generation 22
+Best fitness: 76168.8
+Average fitness: 99405.4
+
+Generation 23
+Best fitness: 76168.8
+Average fitness: 97407.7
+
+Generation 24
+Best fitness: 73848.1
+Average fitness: 95517.3
+
+Generation 25
+Best fitness: 73721.4
+Average fitness: 93054.6
+
+Generation 26
+Best fitness: 70275.3
+Average fitness: 90907.6
+
+Generation 27
+Best fitness: 70275.3
+Average fitness: 88241.2
+
+Generation 28
+Best fitness: 70275.3
+Average fitness: 86212.7
+
+Generation 29
+Best fitness: 69387.5
+Average fitness: 83826.7
+
+Generation 30
+Best fitness: 68906.7
+Average fitness: 80762.7
+
+Generation 31
+Best fitness: 66222.1
+Average fitness: 79660.6
+
+Generation 32
+Best fitness: 66052
+Average fitness: 77652.4
+
+Generation 33
+Best fitness: 62993.6
+Average fitness: 76092.5
+
+Generation 34
+Best fitness: 62932.4
+Average fitness: 73601.1
+
+Generation 35
+Best fitness: 59424.2
+Average fitness: 72149.1
+
+Generation 36
+Best fitness: 57881.7
+Average fitness: 69957.5
+
+Generation 37
+Best fitness: 53952.2
+Average fitness: 68184.4
+
+Generation 38
+Best fitness: 53952.2
+Average fitness: 65808.1
+
+Generation 39
+Best fitness: 53733.2
+Average fitness: 64190.7
+
+Generation 40
+Best fitness: 53733.2
+Average fitness: 62510.5
+
+Generation 41
+Best fitness: 51367.7
+Average fitness: 60924
+
+Generation 42
+Best fitness: 51367.7
+Average fitness: 59190.2
+
+Generation 43
+Best fitness: 51367.7
+Average fitness: 57493.7
+
+Generation 44
+Best fitness: 50450.9
+Average fitness: 55451.8
+
+Generation 45
+Best fitness: 50383.8
+Average fitness: 53459.3
+
+Generation 46
+Best fitness: 49221.5
+Average fitness: 52309.4
+
+Generation 47
+Best fitness: 49010
+Average fitness: 51402.5
+
+Generation 48
+Best fitness: 47716.2
+Average fitness: 50723.6
+
+Generation 49
+Best fitness: 47716.2
+Average fitness: 50015.7
+
+Generation 50
+Best fitness: 46029.4
+Average fitness: 49239.3
+
+Generation 51
+Best fitness: 46029.4
+Average fitness: 48520.5
+
+Generation 52
+Best fitness: 45940.8
+Average fitness: 47918
+
+Generation 53
+Best fitness: 45604.7
+Average fitness: 47437.4
+
+Generation 54
+Best fitness: 45604.7
+Average fitness: 47105.5
+
+Generation 55
+Best fitness: 45604.7
+Average fitness: 46662.4
+
+Generation 56
+Best fitness: 45604.7
+Average fitness: 46118.7
+
+Generation 57
+Best fitness: 45488.4
+Average fitness: 45847.6
+
+Generation 58
+Best fitness: 45488.4
+Average fitness: 45668.6
+
+Generation 59
+Best fitness: 45488.4
+Average fitness: 45600.4
+
+Generation 60
+Best fitness: 45488.4
+Average fitness: 45587.7
+
+Generation 61
+Best fitness: 45488.4
+Average fitness: 45554.9
+
+Generation 62
+Best fitness: 45488.4
+Average fitness: 45500.7
+
+Generation 63
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 64
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 65
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 66
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 67
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 68
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 69
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 70
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 71
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 72
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 73
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 74
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 75
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 76
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 77
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 78
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 79
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 80
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 81
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 82
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 83
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 84
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 85
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 86
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 87
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 88
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 89
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 90
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 91
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 92
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 93
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 94
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 95
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 96
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 97
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 98
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 99
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 100
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 101
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 102
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 103
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 104
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 105
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 106
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 107
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 108
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 109
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 110
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 111
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 112
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 113
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 114
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 115
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 116
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 117
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 118
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 119
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 120
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 121
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 122
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 123
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 124
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 125
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 126
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 127
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 128
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 129
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 130
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 131
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 132
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 133
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 134
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 135
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 136
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 137
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 138
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 139
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 140
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 141
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 142
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 143
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 144
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 145
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 146
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 147
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 148
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 149
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 150
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 151
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 152
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 153
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 154
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 155
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 156
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 157
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 158
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 159
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 160
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 161
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 162
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 163
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 164
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 165
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 166
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 167
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 168
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 169
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 170
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 171
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 172
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 173
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 174
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 175
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 176
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 177
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 178
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 179
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 180
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 181
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 182
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 183
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 184
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 185
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 186
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 187
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 188
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 189
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 190
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 191
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 192
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 193
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 194
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 195
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 196
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 197
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 198
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 199
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 200
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 201
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 202
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 203
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 204
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 205
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 206
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 207
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 208
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 209
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 210
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 211
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 212
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 213
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 214
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 215
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 216
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 217
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 218
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 219
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 220
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 221
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 222
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 223
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 224
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 225
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 226
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 227
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 228
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 229
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 230
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 231
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 232
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 233
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 234
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 235
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 236
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 237
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 238
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 239
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 240
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 241
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 242
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 243
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 244
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 245
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 246
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 247
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 248
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 249
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Generation 250
+Best fitness: 45488.4
+Average fitness: 45488.4
+
+Fitness of best solution ever found: 45488.4
+city 41
+city 9
+city 7
+city 36
+city 28
+city 30
+city 43
+city 17
+city 6
+city 37
+city 27
+city 19
+city 18
+city 44
+city 31
+city 38
+city 1
+city 8
+city 22
+city 16
+city 2
+city 26
+city 4
+city 45
+city 10
+city 24
+city 35
+city 42
+city 29
+city 5
+city 48
+city 39
+city 25
+city 34
+city 3
+city 14
+city 13
+city 21
+city 32
+city 47
+city 23
+city 11
+city 40
+city 15
+city 12
+city 46
+city 33
+city 20

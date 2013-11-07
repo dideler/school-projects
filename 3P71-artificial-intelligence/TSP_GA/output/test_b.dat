@@ -1,0 +1,1062 @@
+
+This program is an implementation of a Genetic Algorithm (GA) system for the Traveling Salesman Problem (TSP).
+
+Population Size = 500
+Maximum Generations = 250
+Crossover Rate = 1.00000
+Mutation Rate = 0.100000
+Number of Elites = 1
+Tournament Selection k = 4
+
+Fitness of best initial solution: 120398
+Average fitness of initial population: 154295
+
+Generation 1
+Best fitness: 115612
+Average fitness: 146466
+
+Generation 2
+Best fitness: 113839
+Average fitness: 142329
+
+Generation 3
+Best fitness: 107054
+Average fitness: 138355
+
+Generation 4
+Best fitness: 107054
+Average fitness: 135239
+
+Generation 5
+Best fitness: 105003
+Average fitness: 133014
+
+Generation 6
+Best fitness: 105003
+Average fitness: 131088
+
+Generation 7
+Best fitness: 104179
+Average fitness: 129244
+
+Generation 8
+Best fitness: 100618
+Average fitness: 127863
+
+Generation 9
+Best fitness: 100177
+Average fitness: 126461
+
+Generation 10
+Best fitness: 92154.9
+Average fitness: 124612
+
+Generation 11
+Best fitness: 92154.9
+Average fitness: 122930
+
+Generation 12
+Best fitness: 92154.9
+Average fitness: 121336
+
+Generation 13
+Best fitness: 88897
+Average fitness: 120186
+
+Generation 14
+Best fitness: 88897
+Average fitness: 118445
+
+Generation 15
+Best fitness: 88897
+Average fitness: 117208
+
+Generation 16
+Best fitness: 86283.1
+Average fitness: 115121
+
+Generation 17
+Best fitness: 84110.9
+Average fitness: 112153
+
+Generation 18
+Best fitness: 84110.9
+Average fitness: 109660
+
+Generation 19
+Best fitness: 83998.5
+Average fitness: 108260
+
+Generation 20
+Best fitness: 81136
+Average fitness: 105264
+
+Generation 21
+Best fitness: 77060.5
+Average fitness: 103191
+
+Generation 22
+Best fitness: 77060.5
+Average fitness: 100814
+
+Generation 23
+Best fitness: 73195.7
+Average fitness: 97610.9
+
+Generation 24
+Best fitness: 73195.7
+Average fitness: 95068.8
+
+Generation 25
+Best fitness: 70108.4
+Average fitness: 92501.5
+
+Generation 26
+Best fitness: 69905.9
+Average fitness: 90737.9
+
+Generation 27
+Best fitness: 67038.9
+Average fitness: 88302
+
+Generation 28
+Best fitness: 67038.9
+Average fitness: 86177.5
+
+Generation 29
+Best fitness: 66776.7
+Average fitness: 84073.9
+
+Generation 30
+Best fitness: 65430.6
+Average fitness: 81213.2
+
+Generation 31
+Best fitness: 62824.6
+Average fitness: 78693.9
+
+Generation 32
+Best fitness: 61650.9
+Average fitness: 75913.1
+
+Generation 33
+Best fitness: 59429.4
+Average fitness: 73554.7
+
+Generation 34
+Best fitness: 58866.7
+Average fitness: 71245.5
+
+Generation 35
+Best fitness: 56850.4
+Average fitness: 69609.2
+
+Generation 36
+Best fitness: 56850.4
+Average fitness: 68107.7
+
+Generation 37
+Best fitness: 56555.1
+Average fitness: 67370.1
+
+Generation 38
+Best fitness: 56268
+Average fitness: 66313.6
+
+Generation 39
+Best fitness: 52577.1
+Average fitness: 64616.9
+
+Generation 40
+Best fitness: 52577.1
+Average fitness: 62912.9
+
+Generation 41
+Best fitness: 52396.7
+Average fitness: 61884.7
+
+Generation 42
+Best fitness: 52396.7
+Average fitness: 60299.5
+
+Generation 43
+Best fitness: 50853.6
+Average fitness: 59541.3
+
+Generation 44
+Best fitness: 50516.7
+Average fitness: 57934
+
+Generation 45
+Best fitness: 49745.4
+Average fitness: 56515.8
+
+Generation 46
+Best fitness: 49745.4
+Average fitness: 55609
+
+Generation 47
+Best fitness: 48568.2
+Average fitness: 54592.8
+
+Generation 48
+Best fitness: 48237.4
+Average fitness: 53328.9
+
+Generation 49
+Best fitness: 47504
+Average fitness: 52252.3
+
+Generation 50
+Best fitness: 46968.1
+Average fitness: 50798
+
+Generation 51
+Best fitness: 46968.1
+Average fitness: 50414.2
+
+Generation 52
+Best fitness: 46533.8
+Average fitness: 50285.1
+
+Generation 53
+Best fitness: 46171
+Average fitness: 49627.7
+
+Generation 54
+Best fitness: 45620.4
+Average fitness: 48679.9
+
+Generation 55
+Best fitness: 45620.4
+Average fitness: 48432.3
+
+Generation 56
+Best fitness: 45518.6
+Average fitness: 48204.9
+
+Generation 57
+Best fitness: 45394.2
+Average fitness: 47332.4
+
+Generation 58
+Best fitness: 44959.9
+Average fitness: 47389.7
+
+Generation 59
+Best fitness: 44959.9
+Average fitness: 46876.3
+
+Generation 60
+Best fitness: 44959.9
+Average fitness: 46504.6
+
+Generation 61
+Best fitness: 44842.7
+Average fitness: 46758.6
+
+Generation 62
+Best fitness: 44767.1
+Average fitness: 46207.2
+
+Generation 63
+Best fitness: 44767.1
+Average fitness: 45508.9
+
+Generation 64
+Best fitness: 44767.1
+Average fitness: 45799.2
+
+Generation 65
+Best fitness: 44767.1
+Average fitness: 45854.2
+
+Generation 66
+Best fitness: 44767.1
+Average fitness: 45789.5
+
+Generation 67
+Best fitness: 44767.1
+Average fitness: 45951.5
+
+Generation 68
+Best fitness: 44767.1
+Average fitness: 45908.7
+
+Generation 69
+Best fitness: 44767.1
+Average fitness: 45987.1
+
+Generation 70
+Best fitness: 44767.1
+Average fitness: 45641.3
+
+Generation 71
+Best fitness: 44767.1
+Average fitness: 45664.4
+
+Generation 72
+Best fitness: 43949.2
+Average fitness: 45683.7
+
+Generation 73
+Best fitness: 43949.2
+Average fitness: 45535.1
+
+Generation 74
+Best fitness: 43949.2
+Average fitness: 45879.2
+
+Generation 75
+Best fitness: 43949.2
+Average fitness: 45621.4
+
+Generation 76
+Best fitness: 43893
+Average fitness: 44860
+
+Generation 77
+Best fitness: 43893
+Average fitness: 45227.2
+
+Generation 78
+Best fitness: 43893
+Average fitness: 44638.4
+
+Generation 79
+Best fitness: 43893
+Average fitness: 45118.4
+
+Generation 80
+Best fitness: 43893
+Average fitness: 44446
+
+Generation 81
+Best fitness: 43749.6
+Average fitness: 44784.3
+
+Generation 82
+Best fitness: 43749.6
+Average fitness: 44561.3
+
+Generation 83
+Best fitness: 43749.6
+Average fitness: 44503.8
+
+Generation 84
+Best fitness: 43749.6
+Average fitness: 44614.1
+
+Generation 85
+Best fitness: 43749.6
+Average fitness: 44780.9
+
+Generation 86
+Best fitness: 43724.9
+Average fitness: 44867
+
+Generation 87
+Best fitness: 43484.7
+Average fitness: 44681.7
+
+Generation 88
+Best fitness: 43484.7
+Average fitness: 44331
+
+Generation 89
+Best fitness: 43460.1
+Average fitness: 44849.4
+
+Generation 90
+Best fitness: 43460.1
+Average fitness: 44416
+
+Generation 91
+Best fitness: 43460.1
+Average fitness: 44653.5
+
+Generation 92
+Best fitness: 43460.1
+Average fitness: 44673.7
+
+Generation 93
+Best fitness: 43460.1
+Average fitness: 44299.3
+
+Generation 94
+Best fitness: 43460.1
+Average fitness: 44199.8
+
+Generation 95
+Best fitness: 43460.1
+Average fitness: 44537
+
+Generation 96
+Best fitness: 43460.1
+Average fitness: 44190.3
+
+Generation 97
+Best fitness: 43379.6
+Average fitness: 44681.9
+
+Generation 98
+Best fitness: 43377.7
+Average fitness: 44307.6
+
+Generation 99
+Best fitness: 43377.7
+Average fitness: 44429.1
+
+Generation 100
+Best fitness: 43297.2
+Average fitness: 44862
+
+Generation 101
+Best fitness: 43297.2
+Average fitness: 44012.6
+
+Generation 102
+Best fitness: 43297.2
+Average fitness: 44128.2
+
+Generation 103
+Best fitness: 43297.2
+Average fitness: 43990.4
+
+Generation 104
+Best fitness: 43297.2
+Average fitness: 44330.6
+
+Generation 105
+Best fitness: 43297.2
+Average fitness: 44013.3
+
+Generation 106
+Best fitness: 43297.2
+Average fitness: 44110.4
+
+Generation 107
+Best fitness: 43259.4
+Average fitness: 44045.8
+
+Generation 108
+Best fitness: 43259.4
+Average fitness: 44146.4
+
+Generation 109
+Best fitness: 43259.4
+Average fitness: 44401.4
+
+Generation 110
+Best fitness: 43259.4
+Average fitness: 43882.9
+
+Generation 111
+Best fitness: 43259.4
+Average fitness: 44182.9
+
+Generation 112
+Best fitness: 43259.4
+Average fitness: 44270.2
+
+Generation 113
+Best fitness: 43259.4
+Average fitness: 43841.5
+
+Generation 114
+Best fitness: 43259.4
+Average fitness: 43824.1
+
+Generation 115
+Best fitness: 43259.4
+Average fitness: 44254.8
+
+Generation 116
+Best fitness: 43259.4
+Average fitness: 44247.8
+
+Generation 117
+Best fitness: 43259.4
+Average fitness: 44229.3
+
+Generation 118
+Best fitness: 43259.4
+Average fitness: 44527.3
+
+Generation 119
+Best fitness: 43259.4
+Average fitness: 43941.3
+
+Generation 120
+Best fitness: 43259.4
+Average fitness: 44469.5
+
+Generation 121
+Best fitness: 43259.4
+Average fitness: 44292.9
+
+Generation 122
+Best fitness: 43259.4
+Average fitness: 43996.2
+
+Generation 123
+Best fitness: 43259.4
+Average fitness: 43880.1
+
+Generation 124
+Best fitness: 43259.4
+Average fitness: 44120.5
+
+Generation 125
+Best fitness: 43259.4
+Average fitness: 44322
+
+Generation 126
+Best fitness: 43259.4
+Average fitness: 44018
+
+Generation 127
+Best fitness: 43259.4
+Average fitness: 44469.6
+
+Generation 128
+Best fitness: 43259.4
+Average fitness: 43921.3
+
+Generation 129
+Best fitness: 43259.4
+Average fitness: 44474.3
+
+Generation 130
+Best fitness: 43259.4
+Average fitness: 44185.1
+
+Generation 131
+Best fitness: 43259.4
+Average fitness: 44138.2
+
+Generation 132
+Best fitness: 43259.4
+Average fitness: 44089.8
+
+Generation 133
+Best fitness: 43259.4
+Average fitness: 44718.3
+
+Generation 134
+Best fitness: 43259.4
+Average fitness: 44126.6
+
+Generation 135
+Best fitness: 42135.9
+Average fitness: 44280.6
+
+Generation 136
+Best fitness: 42135.9
+Average fitness: 44458.3
+
+Generation 137
+Best fitness: 42135.9
+Average fitness: 43868.5
+
+Generation 138
+Best fitness: 42135.9
+Average fitness: 43737.1
+
+Generation 139
+Best fitness: 41833.5
+Average fitness: 43541
+
+Generation 140
+Best fitness: 41833.5
+Average fitness: 43056.6
+
+Generation 141
+Best fitness: 41833.5
+Average fitness: 43322.1
+
+Generation 142
+Best fitness: 41833.5
+Average fitness: 42806.9
+
+Generation 143
+Best fitness: 41833.5
+Average fitness: 43139.3
+
+Generation 144
+Best fitness: 41833.5
+Average fitness: 42873
+
+Generation 145
+Best fitness: 41833.5
+Average fitness: 42665.9
+
+Generation 146
+Best fitness: 41833.5
+Average fitness: 42845.2
+
+Generation 147
+Best fitness: 41833.5
+Average fitness: 42872.6
+
+Generation 148
+Best fitness: 41575.4
+Average fitness: 42708.7
+
+Generation 149
+Best fitness: 41575.4
+Average fitness: 42958.6
+
+Generation 150
+Best fitness: 41575.4
+Average fitness: 42819.7
+
+Generation 151
+Best fitness: 41575.4
+Average fitness: 42563.6
+
+Generation 152
+Best fitness: 41575.4
+Average fitness: 42961.5
+
+Generation 153
+Best fitness: 41575.4
+Average fitness: 42500.3
+
+Generation 154
+Best fitness: 41575.4
+Average fitness: 42319.4
+
+Generation 155
+Best fitness: 41575.4
+Average fitness: 42385.5
+
+Generation 156
+Best fitness: 41575.4
+Average fitness: 42579.6
+
+Generation 157
+Best fitness: 41575.4
+Average fitness: 42205.6
+
+Generation 158
+Best fitness: 41575.4
+Average fitness: 42616.2
+
+Generation 159
+Best fitness: 41575.4
+Average fitness: 42513.1
+
+Generation 160
+Best fitness: 41575.4
+Average fitness: 42355.1
+
+Generation 161
+Best fitness: 41575.4
+Average fitness: 42354.6
+
+Generation 162
+Best fitness: 41575.4
+Average fitness: 42291.1
+
+Generation 163
+Best fitness: 41575.4
+Average fitness: 42326.7
+
+Generation 164
+Best fitness: 41575.4
+Average fitness: 42425
+
+Generation 165
+Best fitness: 41575.4
+Average fitness: 42416.1
+
+Generation 166
+Best fitness: 41575.4
+Average fitness: 42461.1
+
+Generation 167
+Best fitness: 41575.4
+Average fitness: 42058.7
+
+Generation 168
+Best fitness: 41575.4
+Average fitness: 42562.9
+
+Generation 169
+Best fitness: 41575.4
+Average fitness: 42059
+
+Generation 170
+Best fitness: 41575.4
+Average fitness: 42492.2
+
+Generation 171
+Best fitness: 41575.4
+Average fitness: 42070.7
+
+Generation 172
+Best fitness: 41575.4
+Average fitness: 43005.5
+
+Generation 173
+Best fitness: 41557.2
+Average fitness: 42503.1
+
+Generation 174
+Best fitness: 41557.2
+Average fitness: 42611
+
+Generation 175
+Best fitness: 41464.4
+Average fitness: 42374.6
+
+Generation 176
+Best fitness: 41446.2
+Average fitness: 42397.4
+
+Generation 177
+Best fitness: 41446.2
+Average fitness: 42845.2
+
+Generation 178
+Best fitness: 41446.2
+Average fitness: 42274.7
+
+Generation 179
+Best fitness: 41446.2
+Average fitness: 42486
+
+Generation 180
+Best fitness: 41446.2
+Average fitness: 42385.4
+
+Generation 181
+Best fitness: 41446.2
+Average fitness: 42157.8
+
+Generation 182
+Best fitness: 41446.2
+Average fitness: 41978.3
+
+Generation 183
+Best fitness: 41446.2
+Average fitness: 42240.3
+
+Generation 184
+Best fitness: 41446.2
+Average fitness: 42110.6
+
+Generation 185
+Best fitness: 41446.2
+Average fitness: 42179.4
+
+Generation 186
+Best fitness: 41446.2
+Average fitness: 42349.8
+
+Generation 187
+Best fitness: 41446.2
+Average fitness: 42395.7
+
+Generation 188
+Best fitness: 41446.2
+Average fitness: 42453.1
+
+Generation 189
+Best fitness: 41446.2
+Average fitness: 42049.1
+
+Generation 190
+Best fitness: 41446.2
+Average fitness: 42348
+
+Generation 191
+Best fitness: 41446.2
+Average fitness: 42561.5
+
+Generation 192
+Best fitness: 41446.2
+Average fitness: 42498.5
+
+Generation 193
+Best fitness: 41446.2
+Average fitness: 42192.7
+
+Generation 194
+Best fitness: 41446.2
+Average fitness: 42511.9
+
+Generation 195
+Best fitness: 41446.2
+Average fitness: 42746.2
+
+Generation 196
+Best fitness: 41446.2
+Average fitness: 42225.9
+
+Generation 197
+Best fitness: 41446.2
+Average fitness: 42388.2
+
+Generation 198
+Best fitness: 41446.2
+Average fitness: 42133.4
+
+Generation 199
+Best fitness: 41446.2
+Average fitness: 42550.5
+
+Generation 200
+Best fitness: 41446.2
+Average fitness: 42413.1
+
+Generation 201
+Best fitness: 41446.2
+Average fitness: 42454.8
+
+Generation 202
+Best fitness: 41446.2
+Average fitness: 42942.8
+
+Generation 203
+Best fitness: 41446.2
+Average fitness: 42215.9
+
+Generation 204
+Best fitness: 41446.2
+Average fitness: 42883.1
+
+Generation 205
+Best fitness: 41446.2
+Average fitness: 42371
+
+Generation 206
+Best fitness: 41446.2
+Average fitness: 42361.5
+
+Generation 207
+Best fitness: 41446.2
+Average fitness: 42186.4
+
+Generation 208
+Best fitness: 41446.2
+Average fitness: 42235.4
+
+Generation 209
+Best fitness: 41446.2
+Average fitness: 42401.9
+
+Generation 210
+Best fitness: 41446.2
+Average fitness: 42366.6
+
+Generation 211
+Best fitness: 41446.2
+Average fitness: 42450.6
+
+Generation 212
+Best fitness: 41446.2
+Average fitness: 42549.6
+
+Generation 213
+Best fitness: 41109.9
+Average fitness: 42670.1
+
+Generation 214
+Best fitness: 41109.9
+Average fitness: 42411
+
+Generation 215
+Best fitness: 41109.9
+Average fitness: 42242.5
+
+Generation 216
+Best fitness: 41109.9
+Average fitness: 42139.7
+
+Generation 217
+Best fitness: 41109.9
+Average fitness: 42241.3
+
+Generation 218
+Best fitness: 41109.9
+Average fitness: 41856.5
+
+Generation 219
+Best fitness: 41102.1
+Average fitness: 41801.5
+
+Generation 220
+Best fitness: 41102.1
+Average fitness: 41738.4
+
+Generation 221
+Best fitness: 41102.1
+Average fitness: 41427.4
+
+Generation 222
+Best fitness: 41102.1
+Average fitness: 41837.6
+
+Generation 223
+Best fitness: 41102.1
+Average fitness: 41763.9
+
+Generation 224
+Best fitness: 41102.1
+Average fitness: 41899.5
+
+Generation 225
+Best fitness: 41102.1
+Average fitness: 42183.9
+
+Generation 226
+Best fitness: 41102.1
+Average fitness: 42088.2
+
+Generation 227
+Best fitness: 41102.1
+Average fitness: 42097.2
+
+Generation 228
+Best fitness: 40932.6
+Average fitness: 42305.9
+
+Generation 229
+Best fitness: 40932.6
+Average fitness: 42045.8
+
+Generation 230
+Best fitness: 40932.6
+Average fitness: 42212.8
+
+Generation 231
+Best fitness: 40932.6
+Average fitness: 41766.8
+
+Generation 232
+Best fitness: 40932.6
+Average fitness: 41991
+
+Generation 233
+Best fitness: 40932.6
+Average fitness: 42256.2
+
+Generation 234
+Best fitness: 40932.6
+Average fitness: 41728.7
+
+Generation 235
+Best fitness: 40932.6
+Average fitness: 42171.9
+
+Generation 236
+Best fitness: 40932.6
+Average fitness: 42183.2
+
+Generation 237
+Best fitness: 40932.6
+Average fitness: 41632.9
+
+Generation 238
+Best fitness: 40932.6
+Average fitness: 41673.7
+
+Generation 239
+Best fitness: 40932.6
+Average fitness: 42476
+
+Generation 240
+Best fitness: 40932.6
+Average fitness: 41822.5
+
+Generation 241
+Best fitness: 40932.6
+Average fitness: 42088.7
+
+Generation 242
+Best fitness: 40932.6
+Average fitness: 41862.5
+
+Generation 243
+Best fitness: 40932.6
+Average fitness: 41666.8
+
+Generation 244
+Best fitness: 40932.6
+Average fitness: 41885.7
+
+Generation 245
+Best fitness: 40932.6
+Average fitness: 41930.1
+
+Generation 246
+Best fitness: 40932.6
+Average fitness: 42138.4
+
+Generation 247
+Best fitness: 40932.6
+Average fitness: 41640.8
+
+Generation 248
+Best fitness: 40932.6
+Average fitness: 42251.4
+
+Generation 249
+Best fitness: 40932.6
+Average fitness: 41969.1
+
+Generation 250
+Best fitness: 40932.6
+Average fitness: 41554.8
+
+Fitness of best solution ever found: 40932.6
+city 32
+city 48
+city 5
+city 42
+city 24
+city 10
+city 45
+city 35
+city 4
+city 26
+city 2
+city 29
+city 23
+city 11
+city 12
+city 15
+city 33
+city 46
+city 30
+city 27
+city 17
+city 43
+city 20
+city 47
+city 21
+city 39
+city 13
+city 40
+city 1
+city 9
+city 31
+city 44
+city 7
+city 28
+city 19
+city 37
+city 6
+city 36
+city 18
+city 38
+city 8
+city 16
+city 22
+city 3
+city 41
+city 34
+city 14
+city 25
