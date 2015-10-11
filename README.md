@@ -18,7 +18,7 @@ Other school work (dedicated repositories)
 ------------------------------------------
 
 - [Cheat sheets (calculus, combinatorics, logic programming, algorithms, computation)](https://github.com/dideler/cheat-sheets)
-- [Assembly programs for COSC 2P12 - Computer Organization and Assembly Language](https://github.com/dideler/LC-3-Programs)
+- [COSC 2P12 (assembly programs) - Computer Organization and Assembly Language](https://github.com/dideler/LC-3-Programs)
 - [COSC 2P93 - Logic Programming](https://github.com/dideler/logic-programming)
 - [MATH 2P71 - Intro to Combinatorics](https://github.com/dideler/intro-to-combinatorics)
 - [COSC 3P01 (final project) - Intro to Computer Networking](https://github.com/dideler/chess-park)
